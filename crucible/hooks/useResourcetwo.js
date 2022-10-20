@@ -1,10 +1,10 @@
 import axios from 'axios';
 import useSWR from 'swr';
 
-export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export const apiUrl = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
 
-export default function useResource() {
+export default function useResourceTwo() {
 
     const { tokens, logout } = useAuth();
 
@@ -26,7 +26,7 @@ export default function useResource() {
         }
     }
 
-    async function createResource(info) {
+    async function createResource2(info) {
 
         try {
             await axios.post(apiUrl, info, config());
@@ -36,7 +36,7 @@ export default function useResource() {
         }
     }
 
-    async function deleteResource(info) {
+    async function deleteResource2(info) {
 
         try {
             const url = `${apiUrl}${info.id}/`;
@@ -51,7 +51,7 @@ export default function useResource() {
         }
     }
 
-    async function updateResource(resource) {
+    async function updateResource2(resource) {
         // STRETCH
         // Add ability for user to update an existing resource
     }
@@ -76,12 +76,12 @@ export default function useResource() {
     }
 
     return {
-        resources: data,
+        resources2: data,
         error,
-        loading: tokens && !error && !data,
-        createResource,
-        deleteResource,
-        updateResource,
+        loading2: tokens && !error && !data,
+        createResource2,
+        deleteResource2,
+        updateResource2,
     };
 }
 
