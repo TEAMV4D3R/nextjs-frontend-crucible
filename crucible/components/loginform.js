@@ -1,6 +1,6 @@
 import { createContext, useSate, useContext } from "react";
-import { Header } from "../components/header";
-import { Footer } from "../components/footer";
+import { Header } from "./header";
+import { Footer } from "./footer";
 
 const LoginForm = ({ onLogin }) => {
 
