@@ -7,11 +7,11 @@ import { ReporTable } from "./reportable";
 import { Footer } from "./footer";
 import Head from "next/head";
 import { useEffect, useState } from 'react';
-import AboutTheDevs from './aboutthedevs';
-import ChatBoard from './chatboard';
-import JobSearch from './jobsearch';
-import MyJobs from './myjobs';
-
+import AboutTheDevs from '../pages/aboutthedevs';
+import ChatBoard from '../pages/chatboard';
+import JobSearch from '../pages/jobsearch';
+import MyJobs from '../pages/myjobs';
+import Link from 'next/link';
 
 const CrucibleAdmin = (props) => {
     const { resources, createResource, deleteResource } = useResource();
@@ -81,10 +81,10 @@ const CrucibleAdmin = (props) => {
         //     <Footer input={resources} className="z-40" />
         // </div >
         <div>
-            <MyJobs/>
-            <JobSearch/>
-            <ChatBoard/>
-            <AboutTheDevs/>
+            <h1><Link href="/myjobs">MyJobs</Link></h1>
+            <h1><Link href="/jobsearch">JobSearch</Link></h1>
+            <h1><Link href="/chatboard">ChatBoard</Link></h1>
+            <h1><Link href="/aboutthedevs">AboutTheDevs</Link></h1>
         </div>
     )
 }
