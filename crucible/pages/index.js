@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css';
-import CookieStandAdmin from "../components/cookiestandadmin";
+import CrucibleAdmin from "../components/crucibleadmin";
 import LoginForm from "../components/loginform";
 import { useAuth } from "../contexts/auth";
 
@@ -14,7 +14,7 @@ export const Index = () => {
   return (
     <>
       {user ?
-        < CookieStandAdmin user={user} logout={logout} /> : <LoginForm onLogin={loginHandler} />
+        < CrucibleAdmin user={user} logout={logout} /> : <LoginForm onLogin={loginHandler} />
       }
     </>
   )
