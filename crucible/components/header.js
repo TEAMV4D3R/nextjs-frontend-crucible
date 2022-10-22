@@ -5,12 +5,16 @@ export const Header = ({ user, logout }) => {
     return (
         <header className='bg-emerald-600 h-20  flex flex-row content-center justify-between'>
             <div className="flex">
-                <h1 className="my-auto text-3xl m-5">Cookie Stand Admin</h1>
+                <h1 className="my-auto text-3xl m-5">Crucible</h1>
                 {user &&
                     <button className="bg-emerald-800 rounded-md hover:bg-red-200 m-auto p-1" onClick={logout}>Log Out</button>
                 }
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
+                <h1 className="hover:text-red-300"><Link href="./home">Home</Link></h1>
+                <h1>|</h1>
+                <h1 className="hover:text-red-300"><Link href="./">User Info</Link></h1>
+
                 <div className="wrg-toggle">
                     <div>
                     </div>
@@ -28,9 +32,7 @@ export const Header = ({ user, logout }) => {
 
                 <div>
                 </div>
-                <h1 className="hover:text-red-300"><Link href="./home">Home</Link></h1>
-                <h1>|</h1>
-                <h1 className="hover:text-red-300"><Link href="./">Admin</Link></h1>
+                
             </div>
         </header>
     )

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import useSWR from 'swr';
+// USE RESOURCE **TWO** IS BRINGING IN THE SCRAPEDJOBS DATA FROM THE DATABASE
 
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
