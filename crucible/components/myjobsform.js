@@ -40,11 +40,7 @@ export const MyJobsTable = (resources) => {
                     })}
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <td className={`${totalStyles} `} colSpan="2">Totals</td>
-                        {findTotals(resources.input).map((item, idx) => <td className={`${tfStyles} `} key={idx}>{item}</td>)}
-                        <td className={`${tfStyles} `}>{findTotals(resources.input).reduce((item1, item2) => item1 + item2, 0)}</td>
-                    </tr>
+                    
                 </tfoot>
             </table >
         </div >

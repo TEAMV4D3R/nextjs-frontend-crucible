@@ -46,7 +46,14 @@ const MyJobs = () => {
             
             {user? <div>
                 <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
-                {/* <MyJobsTable input={resources}/> */}
+                
+            </div>:
+                <LoginForm onLogin={loginHandler} />}
+
+            {user? <div>
+                {resources &&
+                <MyJobsTable input={resources} deleteStand={deleteResource}/>
+                }
             </div>:
                 <LoginForm onLogin={loginHandler} />}
            
