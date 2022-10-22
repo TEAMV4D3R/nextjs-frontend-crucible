@@ -1,11 +1,23 @@
 import useResource from "../hooks/useResource";
+import { useAuth } from "../contexts/auth";
+import LoginForm from "../components/loginform";
 import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
 import { CreateJobModal } from "../components/createjobmodal"
 import { useEffect, useState } from 'react';
 
 const MyJobs = () => {
+    const { user, login, logout } = useAuth();
+
     const { resources, createResource, deleteResource } = useResource();
+
+    const [searchResult, setSearchResult] = useState([]);
+
+    const loginHandler = (newUser) => {
+        console.log(newUser)
+        login(newUser.username, newUser.password)
+    }
+
     // const [input, setInput] = useState([]);
     // const [modalIsOpen, setIsModalOpen] = useState(false)
     
@@ -19,8 +31,11 @@ const MyJobs = () => {
             employer: e.target.emp.value,
             status: e.target.sts.value,
             note_name: e.target.note.value,
+            owner: 1
         }
+        console.log("user.username", user.username)
         createResource(data);
+        // We need to create views and urls from the user model to pass the owner back to display info for the user only.
     }
 
     return(
@@ -29,10 +44,11 @@ const MyJobs = () => {
                <title>My Jobs</title>
            </Head> */}
             
-            <div>
-                {/* <CreateJobModal handleSubmit={handleSubmit} className="z-0" /> */}
-                <MyJobsTable input={resources}/>
-            </div>
+            {user? <div>
+                <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
+                {/* <MyJobsTable input={resources}/> */}
+            </div>:
+                <LoginForm onLogin={loginHandler} />}
            
             {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
