@@ -1,3 +1,4 @@
+Source: https://github.com/github/gitignore/blob/master/Python.gitignore
 # User generated
 ENV/
 .vscode
@@ -34,6 +35,42 @@ wheels/
 *.egg
 MANIFEST
 
+=======
+# User generated
+ENV/
+.vscode
+.idea
+.DS_Store
+.history
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
@@ -117,4 +154,6 @@ node_modules/
 .next/
 
 # poetry
+poetry.lock
+.vercel
 poetry.lock

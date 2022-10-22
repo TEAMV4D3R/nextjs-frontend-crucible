@@ -1,40 +1,63 @@
 import useResource from "../hooks/useResource";
+import { useAuth } from "../contexts/auth";
+import LoginForm from "../components/loginform";
 import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
-import { CreateJob } from "../components/createjob"
+import { CreateJobModal } from "../components/createjobmodal"
 import { useEffect, useState } from 'react';
 
 const MyJobs = () => {
+    const { user, login, logout } = useAuth();
+
     const { resources, createResource, deleteResource } = useResource();
+
+    const [searchResult, setSearchResult] = useState([]);
+
+    const loginHandler = (newUser) => {
+        console.log(newUser)
+        login(newUser.username, newUser.password)
+    }
+
     // const [input, setInput] = useState([]);
     // const [modalIsOpen, setIsModalOpen] = useState(false)
     
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     const data = {
-    //         position: e.target.pos.value,
-    //         location: e.target.loc.value,
-    //         description: e.target.desc.value,
-    //         employer: e.target.emp.value,
-    //         status: e.target.sts.value,
-    //         note_name: e.target.note.value,
-    //         new_data: getJobs(e.target.pos.value, e.target.loc.value, e.target.emp.value, e.target.sts.value, e.target.note.value) || []
-    //     }
-    //     createResource(data);
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const data = {
+            position: e.target.pos.value,
+            location: e.target.loc.value,
+            description: e.target.desc.value,
+            employer: e.target.emp.value,
+            status: e.target.sts.value,
+            note_name: e.target.note.value,
+            owner: 1
+        }
+        console.log("user.username", user.username)
+        createResource(data);
+        // We need to create views and urls from the user model to pass the owner back to display info for the user only.
+    }
 
     return(
         <div className ="flex flex-col" >
+            {/* <Head>
+               <title>My Jobs</title>
+           </Head> */}
             
-            <div>
-                <MyJobsTable input={resources}/>
-            </div>
+            {user? <div>
+                <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
+                
+            </div>:
+                <LoginForm onLogin={loginHandler} />}
+
+            {user? <div>
+                {resources &&
+                <MyJobsTable input={resources} deleteStand={deleteResource}/>
+                }
+            </div>:
+                <LoginForm onLogin={loginHandler} />}
            
             {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
-                 <Head>
-                    <title>My Jobs</title>
-                </Head>
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -45,12 +68,12 @@ const MyJobs = () => {
                             <h1 className="text-2xl">
                                 No Cookie Stands Available
                             </h1>
-                        }
-                        {resources &&
+                        }*/}
+                        {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
-                        }
-                    </div>
+                        } */}
+                  {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">
