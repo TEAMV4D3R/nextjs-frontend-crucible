@@ -1,4 +1,4 @@
-export const CreateJob = (props) => {
+export const CreateJobModal = (props) => {
     return (
         <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-emerald-300 w-2/3 mx-auto my-10 rounded drop-shadow-md z-0'>
             <h1 className="m-4 text-2xl">Add a Job to Track!</h1>

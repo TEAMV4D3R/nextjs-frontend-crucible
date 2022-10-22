@@ -1,7 +1,7 @@
 import useResource from "../hooks/useResource";
 import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
-import { CreateJob } from "../components/createjob"
+import { CreateJobModal } from "../components/createjobmodal"
 import { useEffect, useState } from 'react';
 
 const MyJobs = () => {
@@ -10,31 +10,31 @@ const MyJobs = () => {
     // const [modalIsOpen, setIsModalOpen] = useState(false)
     
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     const data = {
-    //         position: e.target.pos.value,
-    //         location: e.target.loc.value,
-    //         description: e.target.desc.value,
-    //         employer: e.target.emp.value,
-    //         status: e.target.sts.value,
-    //         note_name: e.target.note.value,
-    //         new_data: getJobs(e.target.pos.value, e.target.loc.value, e.target.emp.value, e.target.sts.value, e.target.note.value) || []
-    //     }
-    //     createResource(data);
-    // }
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const data = {
+            position: e.target.pos.value,
+            location: e.target.loc.value,
+            description: e.target.desc.value,
+            employer: e.target.emp.value,
+            status: e.target.sts.value,
+            note_name: e.target.note.value,
+        }
+        createResource(data);
+    }
 
     return(
         <div className ="flex flex-col" >
+            {/* <Head>
+               <title>My Jobs</title>
+           </Head> */}
             
             <div>
+                {/* <CreateJobModal handleSubmit={handleSubmit} className="z-0" /> */}
                 <MyJobsTable input={resources}/>
             </div>
            
             {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
-                 <Head>
-                    <title>My Jobs</title>
-                </Head>
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -45,12 +45,12 @@ const MyJobs = () => {
                             <h1 className="text-2xl">
                                 No Cookie Stands Available
                             </h1>
-                        }
-                        {resources &&
+                        }*/}
+                        {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
-                        }
-                    </div>
+                        } */}
+                  {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">

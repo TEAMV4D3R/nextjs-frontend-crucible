@@ -1,15 +1,10 @@
-
-
 const tdStyles = "my-10  mx-auto p-3 bg-emerald-400 text-gray-500"
 const thStyles = "my-10  mx-auto p-3 bg-emerald-500 text-gray-700"
 const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
-export const MyJobsTable = (props) => {
+export const MyJobsTable = (resources) => {
     const trackingjobs = ["Id","Position", "Location", "Description", "Employer", "Status", "Created", "Updated", "Notes", "Owner"]
-    // const findDatabasetrackingJobs = (resources) => {
-        
-    // }
 
     return (
         <div className='rounded shadow-xl z-0'>
@@ -19,14 +14,15 @@ export const MyJobsTable = (props) => {
                         {trackingjobs?.map((item, idx) => <th className={`${thStyles}`} key={idx}>{item}</th>)}
                     </tr>
                 </thead>
-                {/* <tbody>
-                    {props.input.map((item, idx) => {
+                <h1>{JSON.stringify(resources)}</h1>
+                <tbody>
+                    {resources.input.map((item, idx) => {
                         return (
                             <tr key={idx} className={`${tdStyles}`}>
                                 <td className='flex items-center content-center'>
                                     <button onClick={(() => {
                                         console.log(item.id)
-                                        props.deleteStand(item)
+                                        resources.deleteStand(item)
                                     }
                                     )} className='hover:text-red-200 mx-auto my-3'>
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 m-auto">
@@ -38,12 +34,7 @@ export const MyJobsTable = (props) => {
                                 <td className={`${tdStyles} m-auto`} >
                                     {item.location}
                                 </td>
-                                {
-                                    item?.hourly_sales.map((item, idx) => {
-                                        return (<td key={idx} className={`${tdStyles} `}>{item}</td>)
-                                    })
-                                }
-                                <td className={`${tdStyles} `}>{item?.hourly_sales.reduce((item1, item2) => item1 + item2, 0)}</td>
+                                
                             </tr>
                         )
                     })}
@@ -51,10 +42,10 @@ export const MyJobsTable = (props) => {
                 <tfoot>
                     <tr>
                         <td className={`${totalStyles} `} colSpan="2">Totals</td>
-                        {findTotals(props.input).map((item, idx) => <td className={`${tfStyles} `} key={idx}>{item}</td>)}
-                        <td className={`${tfStyles} `}>{findTotals(props.input).reduce((item1, item2) => item1 + item2, 0)}</td>
+                        {findTotals(resources.input).map((item, idx) => <td className={`${tfStyles} `} key={idx}>{item}</td>)}
+                        <td className={`${tfStyles} `}>{findTotals(resources.input).reduce((item1, item2) => item1 + item2, 0)}</td>
                     </tr>
-                </tfoot> */}
+                </tfoot>
             </table >
         </div >
     )
