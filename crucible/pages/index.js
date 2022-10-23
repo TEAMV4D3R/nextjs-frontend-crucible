@@ -14,7 +14,7 @@ export const Index = () => {
   return (
     <>
       {user ?
-        <App user={user} logout={logout} /> :
+        <App user={user} logout={logout} onLogin={loginHandler} /> :
         <LoginForm onLogin={loginHandler} />}
     </>
   )

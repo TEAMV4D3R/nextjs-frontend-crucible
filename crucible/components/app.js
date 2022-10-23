@@ -2,7 +2,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from '../components/header';
 import CrucibleAdmin from '../components/crucibleadmin';
 
-const App = ({ user, logout }) => {
+const App = ({ user, logout, onLogin }) => {
 
     return (
         <Router>
@@ -10,7 +10,7 @@ const App = ({ user, logout }) => {
                 user={user}
                 logout={logout}
             />
-            <CrucibleAdmin user={user} />
+            <CrucibleAdmin user={user} onLogin={onLogin} />
         </Router>
     )
 }
