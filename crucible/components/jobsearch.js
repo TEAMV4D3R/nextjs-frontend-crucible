@@ -1,8 +1,9 @@
 import useResourceTwo from "../hooks/useResourcetwo";
 import { useAuth } from "../contexts/auth";
 import { useState } from "react";
-import { Header } from "../components/header";
-import LoginForm from "../components/loginform";
+import Header from "../components/header";
+import LoginForm from "./loginform";
+
 
 
 const JobSearch = () => {
@@ -46,7 +47,6 @@ const JobSearch = () => {
     return (
         // <h1>{JSON.stringify(resources2)}</h1>
         <>
-            {/* <Header /> */}
             {user ?
                 <>
                     <div>

@@ -1,10 +1,10 @@
 import useResource from "../hooks/useResource";
 import { useAuth } from "../contexts/auth";
-import LoginForm from "../components/loginform";
-import OverviewModal from "../components/overviewmodal";
-import { MyJobsTable } from "../components/myjobsform";
-import { CreateJobModal } from "../components/createjobmodal"
-import { Header } from "../components/header";
+import LoginForm from "./loginform";
+import OverviewModal from "./overviewmodal";
+import { MyJobsTable } from "./myjobsform";
+import { CreateJobModal } from "./createjobmodal"
+import { Header } from "./header";
 import { useState } from 'react';
 
 const MyJobs = () => {
@@ -41,7 +41,6 @@ const MyJobs = () => {
 
     return (
         <>
-            <Header />
             <div className="flex flex-col" >
                 {/* <Head>
                <title>My Jobs</title>

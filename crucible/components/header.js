@@ -3,7 +3,7 @@ import { AiFillHome } from "react-icons/ai";
 import { AiOutlineMenu } from "react-icons/ai";
 import 'react-modern-drawer/dist/index.css';
 import { useState } from 'react';
-import Link from 'next/link';
+import { Link } from "react-router-dom";
 
 export const Header = ({ user, logout }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -19,14 +19,14 @@ export const Header = ({ user, logout }) => {
                 }
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
-                <Link href="/"><AiFillHome /></Link>
+                <Link to="/"><AiFillHome /></Link>
                 <AiOutlineMenu onClick={toggleDrawer} />
                 <ReactDrawer
                     isOpen={isOpen}
                     toggleDrawer={toggleDrawer}
                 />
-                        
-                        {/*<div className="wrg-toggle">
+
+                {/*<div className="wrg-toggle">
                     <div>
                     </div>
                     <div className="wrg-toggle-container">
@@ -39,7 +39,7 @@ export const Header = ({ user, logout }) => {
                     </div>
                     <div className="wrg-toggle-circle"></div>
                     <input className="wrg-toggle-input" type="checkbox" aria-label="Toggle Button" />
-                </div>*/}            
+                </div>*/}
             </div>
         </header>
     )
