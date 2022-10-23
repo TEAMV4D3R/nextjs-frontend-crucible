@@ -15,16 +15,14 @@ const LoginForm = ({ onLogin }) => {
     }
 
     return (
-        <div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
-            <Header />
-            <div className=" flex h-5/6">
-                <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center">
-                    <input placeholder="username" name="username" className="my-20 w-3/5 h-10 bg-emerald-200 rounded" />
-                    <input type="password" name="password" placeholder="password" className="w-3/5 h-10 bg-emerald-200 rounded" />
-                    <button className="m-5 rounded shadow-xl bg-emerald-500 px-10 py-5 ">Log In</button>
+        <div className="bg-gray-100 text-black items-center h-screen content-center items-center text-white">
+            <div className=" flex h-5/6 text-white">
+                <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center text-black">
+                    <input placeholder="username" name="username" className="my-20 w-3/5 h-10 bg-gray-600 rounded text-white" />
+                    <input type="password" name="password" placeholder="password" className="w-3/5 h-10 bg-gray-600 rounded text-white" />
+                    <button className="m-5 rounded shadow-xl bg-gray-500 px-10 py-5 text-white">Log In</button>
                 </form>
             </div>
-            <Footer />
         </div>
     );
 }

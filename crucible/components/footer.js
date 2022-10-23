@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 export const Footer = (props) => {
     const s = props.input?.length > 1 ? "s" : "";
     return (
-        <footer className=" flex content-center bg-emerald-600 h-20 my-auto flex flex-col content-center z-40 ">
+        <footer className=" flex content-center bg-gray-500 h-20 my-auto flex flex-col content-center z-40 ">
             {props.input &&
                 <div className="flex h-full">
                     {props.input?.length > 0 &&

@@ -4,7 +4,8 @@ import LoginForm from "../components/loginform";
 import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
 import { CreateJobModal } from "../components/createjobmodal"
-import { useEffect, useState } from 'react';
+import { Header } from "../components/header";
+import { useState } from 'react';
 
 const MyJobs = () => {
     const { user, login, logout } = useAuth();
@@ -20,7 +21,7 @@ const MyJobs = () => {
 
     // const [input, setInput] = useState([]);
     // const [modalIsOpen, setIsModalOpen] = useState(false)
-    
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -38,26 +39,28 @@ const MyJobs = () => {
         // We need to create views and urls from the user model to pass the owner back to display info for the user only.
     }
 
-    return(
-        <div className ="flex flex-col" >
-            {/* <Head>
+    return (
+        <>
+            <Header />
+            <div className="flex flex-col" >
+                {/* <Head>
                <title>My Jobs</title>
            </Head> */}
-            
-            {user? <div>
-                <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
-                
-            </div>:
-                <LoginForm onLogin={loginHandler} />}
 
-            {user? <div>
-                {resources &&
-                <MyJobsTable input={resources} deleteStand={deleteResource}/>
-                }
-            </div>:
-                <LoginForm onLogin={loginHandler} />}
-           
-            {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
+                {user ? <div>
+                    <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
+
+                </div> :
+                    <LoginForm onLogin={loginHandler} />}
+
+                {user ? <div>
+                    {resources &&
+                        <MyJobsTable input={resources} deleteStand={deleteResource} />
+                    }
+                </div> :
+                    <LoginForm onLogin={loginHandler} />}
+
+                {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -69,11 +72,11 @@ const MyJobs = () => {
                                 No Cookie Stands Available
                             </h1>
                         }*/}
-                        {/* {resources &&
+                {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
                         } */}
-                  {/*  </div>
+                {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">
@@ -88,8 +91,9 @@ const MyJobs = () => {
                 <Footer input={resources} className="z-40" />
             </div > */}
 
-        </div>
-    
+            </div>
+        </>
+
     )
 }
 
