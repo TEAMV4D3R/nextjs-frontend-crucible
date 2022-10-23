@@ -7,9 +7,7 @@ import { CreateJobModal } from "./createjobmodal"
 import { Header } from "./header";
 import { useState } from 'react';
 
-const MyJobs = () => {
-    const { user, login, logout } = useAuth();
-
+const MyJobs = ({ user }) => {
     const { resources, createResource, deleteResource } = useResource();
 
     const [searchResult, setSearchResult] = useState([]);

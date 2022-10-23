@@ -14,9 +14,6 @@ export const Header = ({ user, logout }) => {
         <header className='bg-gray-500 h-20  flex flex-row content-center justify-between'>
             <div className="flex">
                 <h1 className="my-auto text-3xl m-5">Crucible</h1>
-                {user &&
-                    <button className="bg-emerald-800 rounded-md hover:bg-red-200 m-auto p-1" onClick={logout}>Log Out</button>
-                }
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link to="/"><AiFillHome /></Link>
@@ -24,6 +21,8 @@ export const Header = ({ user, logout }) => {
                 <ReactDrawer
                     isOpen={isOpen}
                     toggleDrawer={toggleDrawer}
+                    user={user}
+                    logout={logout}
                 />
 
                 {/*<div className="wrg-toggle">

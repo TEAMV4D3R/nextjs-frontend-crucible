@@ -6,9 +6,8 @@ import LoginForm from "./loginform";
 
 
 
-const JobSearch = () => {
+const JobSearch = ({ user }) => {
 
-    const { user, login, logout } = useAuth();
 
     const { resources2, createResource2, deleteResource2 } = useResourceTwo();
     console.log(resources2)

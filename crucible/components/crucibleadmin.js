@@ -13,15 +13,15 @@ import JobSearch from '../components/jobsearch';
 import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 
-const CrucibleAdmin = () => {
+const CrucibleAdmin = ({ user }) => {
 
     return (
         <Routes>
-            <Route path='/' element={<DashBoard />}></Route>
-            <Route path='/myjobs' element={<MyJobs />}></Route>
-            <Route path='/jobsearch' element={<JobSearch />}></Route>
-            <Route path='/chatboard' element={<ChatBoard />}></Route>
-            <Route path='/aboutthedevs' element={<AboutTheDevs />}></Route>
+            <Route path='/' element={<DashBoard user={user} />}></Route>
+            <Route path='/myjobs' element={<MyJobs user={user} />}></Route>
+            <Route path='/jobsearch' element={<JobSearch user={user} />}></Route>
+            <Route path='/chatboard' element={<ChatBoard user={user} />}></Route>
+            <Route path='/aboutthedevs' element={<AboutTheDevs user={user} />}></Route>
         </Routes>
     )
 }
