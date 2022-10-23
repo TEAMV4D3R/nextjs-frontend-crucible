@@ -13,12 +13,6 @@ const JobSearch = ({ user, onLogin }) => {
     console.log(resources2)
 
     const [searchResult, setSearchResult] = useState([]);
-
-    const loginHandler = (newUser) => {
-        console.log(newUser)
-        login(newUser.username, newUser.password)
-    }
-
     // will need access to scraper to find info
     function submitHandler(event) {
         event.preventDefault();
@@ -32,10 +26,10 @@ const JobSearch = ({ user, onLogin }) => {
     const findJobs = (keyword, location) => {
         console.log("logging: ", keyword, ",", location)
         console.log(resources2)
-        const tempSearchResult = resources2.filter(arr => {
-            console.log("arr position: ", arr.position.toLowerCase())
+        const tempSearchResult = resources2.filter(el => {
+            console.log("arr position: ", el?.position.toLowerCase())
             console.log(keyword)
-            return arr.position.toLowerCase().includes(keyword.toLowerCase()) && arr.location.toLowerCase().includes(location.toLowerCase())
+            return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
         })
         console.log("temp:", tempSearchResult)
         setSearchResult(tempSearchResult)
@@ -56,15 +50,15 @@ const JobSearch = ({ user, onLogin }) => {
                     </div>
                     {searchResult.map((el, idx) => {
                         return <div key={idx} className="m-5">
-                            <h6>position:{el.position}</h6>
-                            <h6>location:{el.location}</h6>
-                            <h6>company:{el.company}</h6>
-                            <h6>url:{el.url}</h6>
+                            <h6>position:{el?.position}</h6>
+                            <h6>location:{el?.location}</h6>
+                            <h6>company:{el?.company}</h6>
+                            <h6>url:{el?.url}</h6>
                         </div>
                     })
                     }
                 </> :
-                onLogin({ user })
+                <LoginForm onLogin={onLogin} />
             }
         </div>
 
