@@ -5,7 +5,7 @@ import { Header } from "../components/header";
 import LoginForm from "../components/loginform";
 
 
-const SearchForm = () => {
+const JobSearch = () => {
 
     const { user, login, logout } = useAuth();
 
@@ -46,7 +46,7 @@ const SearchForm = () => {
     return (
         // <h1>{JSON.stringify(resources2)}</h1>
         <>
-            <Header />
+            {/* <Header /> */}
             {user ?
                 <>
                     <div>
@@ -74,4 +74,4 @@ const SearchForm = () => {
     )
 }
 
-export default SearchForm
+export default JobSearch
