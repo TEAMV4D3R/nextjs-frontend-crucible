@@ -9,8 +9,7 @@ export const Index = () => {
   const { user, login, logout } = useAuth();
 
   const loginHandler = (newUser) => {
-    console.log(newUser)
-    login(newUser.username, newUser.password)
+    login(newUser?.username, newUser?.password)
   }
   return (
     <>
