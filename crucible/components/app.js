@@ -4,7 +4,7 @@ import CrucibleAdmin from '../components/crucibleadmin';
 import useResourceTwo from "../hooks/useResourcetwo";
 
 const App = ({ user, logout, onLogin }) => {
-    const { resources2 } = useResourceTwo();
+    // const { resources2 } = useResourceTwo();
 
     return (
         <Router>
