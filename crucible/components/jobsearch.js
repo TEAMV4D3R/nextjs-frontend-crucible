@@ -5,6 +5,8 @@ const JobSearch = () => {
     const { resources2, createResource2, deleteResource2 } = useResourceTwo();
     console.log(resources2)
 
+    const [searchResult, setSearchResult] = useState([]);
+
     const findJobs = (keyword, location) => {
         console.log("logging: ", keyword, ",", location)
         if (resources2) {
@@ -19,7 +21,6 @@ const JobSearch = () => {
         console.log("filtered: ", searchResult)
     }
 
-    const [searchResult, setSearchResult] = useState([]);
     const submitHandler = (event) => {
         event.preventDefault();
         const newSearch = {

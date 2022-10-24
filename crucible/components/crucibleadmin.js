@@ -13,6 +13,7 @@ import JobSearch from '../components/jobsearch';
 import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 import LoginForm from '../components/loginform';
+import FindJobs from '../components/findjobs';
 
 const CrucibleAdmin = ({ user, onLogin }) => {
 
@@ -21,6 +22,7 @@ const CrucibleAdmin = ({ user, onLogin }) => {
             <Route path='/' element={<DashBoard user={user} onLogin={onLogin} />}></Route>
             <Route path='/myjobs' element={<MyJobs user={user} onLogin={onLogin} />}></Route>
             <Route path='/jobsearch' element={<JobSearch user={user} onLogin={onLogin} />}></Route>
+            <Route path='/findjobs' element={<FindJobs user={user} onLogin={onLogin} />}></Route>
             <Route path='/chatboard' element={<ChatBoard user={user} onLogin={onLogin} />}></Route>
             <Route path='/aboutthedevs' element={<AboutTheDevs user={user} onLogin={onLogin} />}></Route>
         </Routes>
