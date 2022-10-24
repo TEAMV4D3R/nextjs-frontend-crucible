@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from '../components/header';
 import CrucibleAdmin from '../components/crucibleadmin';
-import { useResourceTwo } from "../hooks/auth";
+import { useResourceTwo } from "../hooks/useResourceTwo";
 
 const App = ({ user, logout, onLogin }) => {
     const { resources2 } = useResourceTwo();
