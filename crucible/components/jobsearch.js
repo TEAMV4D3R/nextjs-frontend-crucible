@@ -3,7 +3,6 @@ import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "./header";
 import LoginForm from "./loginform";
-import { Footer } from "./footer";
 
 const JobSearch = () => {
 
@@ -65,7 +64,6 @@ const JobSearch = () => {
                 })
                 }
             </div>
-            <Footer />
         </>
     )
 }

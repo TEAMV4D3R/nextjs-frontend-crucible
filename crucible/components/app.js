@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Header } from '../components/header';
+import { Footer } from '../components/footer';
 import CrucibleAdmin from '../components/crucibleadmin';
 import useResourceTwo from "../hooks/useResourcetwo";
 
@@ -16,6 +17,7 @@ const App = ({ user, logout, onLogin, tokens }) => {
                 onLogin={onLogin}
                 tokens={tokens}
             />
+            <Footer />
         </Router>
     )
 }
