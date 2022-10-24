@@ -15,8 +15,7 @@ import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 
 const CrucibleAdmin = ({ user, onLogin, tokens }) => {
-    const { resources, resources2, createResource, deleteResource } = useResource();
-    console.log("re", resources2)
+    const { resources, createResource, deleteResource } = useResource();
 
     return (
         <Routes>

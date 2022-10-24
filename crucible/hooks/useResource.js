@@ -12,10 +12,6 @@ export default function useResource() {
 
     const { data, error, mutate } = useSWR([apiUrl, tokens], fetchResource);
 
-    const { data2, error2, mutate2 } = useSWR([apiUrl, tokens], fetchResource);
-
-    console.log("data2", data2)
-
 
     async function fetchResource(url) {
 
@@ -33,21 +29,6 @@ export default function useResource() {
         }
     }
 
-    async function fetchResource2(url) {
-
-        if (!tokens) {
-            return;
-        }
-
-        try {
-            const response = await axios.get(url, config());
-
-            return response.data;
-
-        } catch (err) {
-            handleError(err);
-        }
-    }
 
     async function createResource(info) {
 
@@ -101,11 +82,8 @@ export default function useResource() {
 
     return {
         resources: data,
-        resources2: data2,
         error,
-        error2,
         loading: tokens && !error && !data,
-        loading2: tokens && !error2 && !data2,
         createResource,
         deleteResource,
         updateResource,

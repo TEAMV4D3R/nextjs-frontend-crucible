@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useResource2 from "../hooks/useResourcetwo";
 
-const JobSearch = ({ tokens }) => {
+const JobSearch = () => {
 
     // const { resources2 } = useResource2(tokens);
     const resources2 = []
