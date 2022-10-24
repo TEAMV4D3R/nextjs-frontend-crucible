@@ -12,9 +12,9 @@ const JobSearch = ({ resources2 }) => {
                 console.log(keyword)
                 return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
             })
+            console.log("temp:", tempSearchResult)
+            setSearchResult(tempSearchResult)
         }
-        console.log("temp:", tempSearchResult)
-        setSearchResult(tempSearchResult)
         console.log("filtered: ", searchResult)
     }
 
@@ -30,8 +30,7 @@ const JobSearch = ({ resources2 }) => {
 
     return (
         <div>
-            <h1>JobSearch</h1>
-            {/* <div className=" flex h-5/6">
+            <div className=" flex h-5/6">
                 <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center">
                     <input placeholder="job" name="keyword" className="my-20 w-3/5 h-10 bg-emerald-200 rounded" />
                     <input name="location" placeholder="location" className="w-3/5 h-10 bg-emerald-200 rounded" />
@@ -46,7 +45,7 @@ const JobSearch = ({ resources2 }) => {
                         <h6>company:{el?.company}</h6>
                         <h6>url:{el?.url}</h6>
                     </div>
-                })} */}
+                })}
         </div>
 
     )

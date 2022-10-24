@@ -3,6 +3,7 @@ import useSWR from 'swr';
 // USE RESOURCE IS BRINGING IN THE MYJOBS DATA FROM THE DATABASE
 
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+export const apiUrl2 = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
 
 export default function useResource() {
@@ -31,6 +32,18 @@ export default function useResource() {
 
         try {
             const Response = await axios.post(apiUrl, info, config());
+            console.log(Response.data);
+            mutate(); // mutate causes complete collection to be refetched
+        } catch (err) {
+            console.log(err);
+            handleError(err);
+        }
+    }
+
+    async function createResource(info) {
+
+        try {
+            const Response = await axios.post(apiUrl2, info, config());
             console.log(Response.data);
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
@@ -83,6 +96,7 @@ export default function useResource() {
         error,
         loading: tokens && !error && !data,
         createResource,
+        createResource2,
         deleteResource,
         updateResource,
     };
