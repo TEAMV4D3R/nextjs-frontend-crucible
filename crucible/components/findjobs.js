@@ -2,8 +2,8 @@ import useResourceTwo from "../hooks/useResourcetwo";
 import { useState } from "react";
 
 const FindJobs = () => {
-    const { resources2, createResource2, deleteResource2 } = useResourceTwo();
-    console.log(resources2)
+    // const { resources2, createResource2, deleteResource2 } = useResourceTwo();
+    // console.log(resources2)
 
     // const [searchResult, setSearchResult] = useState([]);
 
