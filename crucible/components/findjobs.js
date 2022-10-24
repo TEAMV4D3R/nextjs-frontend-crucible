@@ -5,21 +5,21 @@ const FindJobs = () => {
     const { resources2, createResource2, deleteResource2 } = useResourceTwo();
     console.log(resources2)
 
-    const [searchResult, setSearchResult] = useState([]);
+    // const [searchResult, setSearchResult] = useState([]);
 
-    const findJobs = (keyword, location) => {
-        console.log("logging: ", keyword, ",", location)
-        if (resources2) {
-            const tempSearchResult = resources2.filter(el => {
-                console.log("arr position: ", el?.position.toLowerCase())
-                console.log(keyword)
-                return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
-            })
-            console.log("temp:", tempSearchResult)
-            setSearchResult(tempSearchResult)
-        }
-        console.log("filtered: ", searchResult)
-    }
+    // const findJobs = (keyword, location) => {
+    //     console.log("logging: ", keyword, ",", location)
+    //     if (resources2) {
+    //         const tempSearchResult = resources2.filter(el => {
+    //             console.log("arr position: ", el?.position.toLowerCase())
+    //             console.log(keyword)
+    //             return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
+    //         })
+    //         console.log("temp:", tempSearchResult)
+    //         setSearchResult(tempSearchResult)
+    //     }
+    //     console.log("filtered: ", searchResult)
+    // }
 
     const submitHandler = (event) => {
         event.preventDefault();
@@ -27,7 +27,8 @@ const FindJobs = () => {
             keyword: event.target.keyword.value,
             location: event.target.location.value,
         };
-        findJobs(newSearch.keyword, newSearch.location)
+        // findJobs(newSearch.keyword, newSearch.location)
+        console.log("findjobs", newSearch)
     }
 
 
@@ -41,7 +42,7 @@ const FindJobs = () => {
                     <button className="m-5 rounded shadow-xl bg-emerald-500 px-10 py-5 ">Search</button>
                 </form>
             </div>
-            {searchResult.length > 0 &&
+            {/* {searchResult.length > 0 &&
                 searchResult.map((el, idx) => {
                     return <div key={idx} className="m-5">
                         <h6>position:{el?.position}</h6>
@@ -49,7 +50,7 @@ const FindJobs = () => {
                         <h6>company:{el?.company}</h6>
                         <h6>url:{el?.url}</h6>
                     </div>
-                })}
+                })} */}
         </div>
 
     )
