@@ -1,4 +1,3 @@
-import useResource from "../hooks/useResource";
 import { useAuth } from "../contexts/auth";
 import LoginForm from "./loginform";
 import OverviewModal from "./overviewmodal";
@@ -7,9 +6,7 @@ import { CreateJobModal } from "./createjobmodal"
 import { Header } from "./header";
 import { useState } from 'react';
 
-const MyJobs = ({ user }) => {
-    const { resources, createResource, deleteResource } = useResource();
-
+const MyJobs = ({ user, resources, createResource, deleteResource }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()

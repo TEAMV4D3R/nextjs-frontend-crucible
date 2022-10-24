@@ -12,7 +12,28 @@ export default function useResource() {
 
     const { data, error, mutate } = useSWR([apiUrl, tokens], fetchResource);
 
+    const { data2, error2, mutate2 } = useSWR([apiUrl, tokens], fetchResource);
+
+    console.log("data2", data2)
+
+
     async function fetchResource(url) {
+
+        if (!tokens) {
+            return;
+        }
+
+        try {
+            const response = await axios.get(url, config());
+
+            return response.data;
+
+        } catch (err) {
+            handleError(err);
+        }
+    }
+
+    async function fetchResource2(url) {
 
         if (!tokens) {
             return;
@@ -32,19 +53,6 @@ export default function useResource() {
 
         try {
             const Response = await axios.post(apiUrl, info, config());
-            console.log(Response.data);
-            mutate(); // mutate causes complete collection to be refetched
-        } catch (err) {
-            console.log(err);
-            handleError(err);
-        }
-    }
-
-    async function createResource(info) {
-
-        try {
-            const Response = await axios.post(apiUrl2, info, config());
-            console.log(Response.data);
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
             console.log(err);
@@ -93,10 +101,12 @@ export default function useResource() {
 
     return {
         resources: data,
+        resources2: data2,
         error,
+        error2,
         loading: tokens && !error && !data,
+        loading2: tokens && !error2 && !data2,
         createResource,
-        createResource2,
         deleteResource,
         updateResource,
     };

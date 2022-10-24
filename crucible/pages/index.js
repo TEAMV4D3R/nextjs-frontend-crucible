@@ -6,7 +6,8 @@ import { useAuth } from "../contexts/auth";
 
 export const Index = () => {
 
-  const { user, login, logout } = useAuth();
+  const { user, login, tokens, logout } = useAuth();
+  console.log("tokens", tokens)
 
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
@@ -14,7 +15,7 @@ export const Index = () => {
   return (
     <>
       {user ?
-        <App user={user} logout={logout} onLogin={loginHandler} /> :
+        <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
         <LoginForm onLogin={loginHandler} />}
     </>
   )

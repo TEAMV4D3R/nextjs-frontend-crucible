@@ -3,9 +3,7 @@ import { Header } from '../components/header';
 import CrucibleAdmin from '../components/crucibleadmin';
 import useResourceTwo from "../hooks/useResourcetwo";
 
-const App = ({ user, logout, onLogin }) => {
-    // const { resources2, createResource2, deleteResource2 } = useResourceTwo();
-    const resources2 = []
+const App = ({ user, logout, onLogin, tokens }) => {
 
     return (
         <Router>
@@ -16,7 +14,7 @@ const App = ({ user, logout, onLogin }) => {
             <CrucibleAdmin
                 user={user}
                 onLogin={onLogin}
-                resources2={resources2}
+                tokens={tokens}
             />
         </Router>
     )

@@ -1,9 +1,12 @@
 import { useState } from "react";
+import useResource2 from "../hooks/useResourcetwo";
 
-const JobSearch = ({ resources2 }) => {
+const JobSearch = ({ tokens }) => {
 
+    // const { resources2 } = useResource2(tokens);
+    const resources2 = []
+    console.log("resources", resources2)
     const [searchResult, setSearchResult] = useState([]);
-
     const findJobs = (keyword, location) => {
         console.log("logging: ", keyword, ",", location)
         if (resources2) {
