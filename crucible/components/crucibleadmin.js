@@ -10,7 +10,7 @@ import {
 import useResource from "../hooks/useResource";
 import DashBoard from '../components/dashboard';
 import ChatBoard from '../components/chatboard';
-import JobSearch from '../components/jobsearch';
+import JobSearch from './jobsearch';
 import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 

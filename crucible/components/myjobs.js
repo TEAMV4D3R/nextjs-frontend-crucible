@@ -1,9 +1,10 @@
 import { useAuth } from "../contexts/auth";
 import LoginForm from "./loginform";
-import OverviewModal from "./overviewmodal";
-import { MyJobsTable } from "./myjobsform";
-import { CreateJobModal } from "./createjobmodal"
-import { Header } from "./header";
+import OverviewModal from "../components/overviewmodal";
+import { MyJobsTable } from "../components/myjobsform";
+import { CreateJobModal } from "../components/createjobmodal"
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
 import { useState } from 'react';
 
 const MyJobs = ({ user, resources, createResource, deleteResource }) => {
@@ -30,37 +31,12 @@ const MyJobs = ({ user, resources, createResource, deleteResource }) => {
             {resources &&
                 <MyJobsTable input={resources} deleteStand={deleteResource} />
             }
-            {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
-                <Header user={props.user} logout={props.logout} />
-                <main className='flex flex-col items-center h-5/6 overflow-scroll'>
-                    <CreateJob handleSubmit={handleSubmit} className="z-0" />
-                    {resources &&
-                        <OverviewModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />}
-                    <div className='flex flex-col items-center my-10 z-0'>
-                        {resources?.length <= 0 &&
-                            <h1 className="text-2xl">
-                                No Cookie Stands Available
-                            </h1>
-                        }*/}
-            {/* {resources &&
-                            resources.length > 0 &&
-                            <MyJobsTable input={resources} deleteStand={deleteResource} />
-                        } */}
-            {/*  </div>
-                    {resources &&
-                        resources.length > 0 &&
-                        <div className="flex z-0">
-                            <button onClick={() => {
-                                setIsModalOpen(true)
-                            }}
-                                className='flex flex-row p-4 bg-emerald-700 rounded-md shadow-lg hover:bg-red-200 m-1'
-                            >Overview</button>
-                        </div>
-                    }
-                </main>
-            </div > */}
-        </div>
+            {user ? <div>
+                <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
 
+            </div> :
+                <LoginForm onLogin={loginHandler} />}
+        </div>
     )
 }
 

@@ -12,6 +12,7 @@ export const Index = () => {
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
   }
+
   return (
     <>
       {user ?

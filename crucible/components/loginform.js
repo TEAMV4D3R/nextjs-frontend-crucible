@@ -1,6 +1,4 @@
 import { createContext, useSate, useContext } from "react";
-import { Header } from "./header";
-import { Footer } from "./footer";
 
 const LoginForm = ({ onLogin }) => {
 
@@ -15,12 +13,16 @@ const LoginForm = ({ onLogin }) => {
     }
 
     return (
-        <div className="bg-gray-100 text-black items-center h-screen content-center items-center text-white">
+        <div className="bg-color-main dark:bg-color-main-dark h-[calc(100vh-10em)] dark:text-color-bright-dark">
+            <h1 className="flex flex-col mx-auto w-4/6 items-center">User Login</h1>
             <div className=" flex h-5/6 text-white">
                 <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center text-black">
-                    <input placeholder="username" name="username" className="my-20 w-3/5 h-10 bg-gray-600 rounded text-white" />
-                    <input type="password" name="password" placeholder="password" className="w-3/5 h-10 bg-gray-600 rounded text-white" />
-                    <button className="m-5 rounded shadow-xl bg-gray-500 px-10 py-5 text-white">Log In</button>
+                    <input placeholder="Username" name="username" className="my-20 w-3/5 h-10 bg-color-contrast dark:bg-color-contrast-dark rounded" />
+                    <input type="password" name="password" placeholder="Password" className="w-3/5 h-10 bg-color-contrast dark:bg-color-contrast-dark rounded" />
+                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
+                                px-10 py-5 ">Log In</button>
+                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
+                                px-8 py-5 ">Sign Up</button>
                 </form>
             </div>
         </div>
