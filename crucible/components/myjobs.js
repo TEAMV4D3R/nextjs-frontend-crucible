@@ -10,16 +10,6 @@ import { useState } from 'react';
 const MyJobs = ({ user }) => {
     const { resources, createResource, deleteResource } = useResource();
 
-    const [searchResult, setSearchResult] = useState([]);
-
-    const loginHandler = (newUser) => {
-        console.log(newUser)
-        login(newUser.username, newUser.password)
-    }
-
-    // const [input, setInput] = useState([]);
-    // const [modalIsOpen, setIsModalOpen] = useState(false)
-
 
     const handleSubmit = (e) => {
         e.preventDefault()

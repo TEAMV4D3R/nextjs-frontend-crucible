@@ -1,10 +1,5 @@
 import useResourceTwo from "../hooks/useResourcetwo";
-import { useAuth } from "../contexts/auth";
 import { useState } from "react";
-import Header from "../components/header";
-import LoginForm from "./loginform";
-
-
 
 const JobSearch = ({ user, onLogin }) => {
 
@@ -12,8 +7,21 @@ const JobSearch = ({ user, onLogin }) => {
     const { resources2, createResource2, deleteResource2 } = useResourceTwo();
     console.log(resources2)
 
+    const findJobs = (keyword, location) => {
+        console.log("logging: ", keyword, ",", location)
+        if (resources2) {
+            const tempSearchResult = resources2.filter(el => {
+                console.log("arr position: ", el?.position.toLowerCase())
+                console.log(keyword)
+                return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
+            })
+        }
+        console.log("temp:", tempSearchResult)
+        setSearchResult(tempSearchResult)
+        console.log("filtered: ", searchResult)
+    }
+
     const [searchResult, setSearchResult] = useState([]);
-    // will need access to scraper to find info
     function submitHandler(event) {
         event.preventDefault();
         const newSearch = {
@@ -21,19 +29,6 @@ const JobSearch = ({ user, onLogin }) => {
             location: event.target.location.value,
         };
         findJobs(newSearch.keyword, newSearch.location)
-    }
-
-    const findJobs = (keyword, location) => {
-        console.log("logging: ", keyword, ",", location)
-        console.log(resources2)
-        const tempSearchResult = resources2.filter(el => {
-            console.log("arr position: ", el?.position.toLowerCase())
-            console.log(keyword)
-            return el?.position.toLowerCase().includes(keyword.toLowerCase()) && el?.location.toLowerCase().includes(location.toLowerCase())
-        })
-        console.log("temp:", tempSearchResult)
-        setSearchResult(tempSearchResult)
-        console.log("filtered: ", searchResult)
     }
 
 
