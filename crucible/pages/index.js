@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 import CrucibleAdmin from "../components/crucibleadmin";
 import LoginForm from "../components/loginform";
 import { useAuth } from "../contexts/auth";
-import JobSearch from './jobsearch';
+import UserHome from './userhome';
 
 export const Index = () => {
 
@@ -11,15 +11,17 @@ export const Index = () => {
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
   }
+  
   return (
     <>
       {user ?
         <>
           < CrucibleAdmin user={user} logout={logout} />
-          <JobSearch />
+          <UserHome />
         </> :
         <LoginForm onLogin={loginHandler} />
       }
+      
     </>
   )
 

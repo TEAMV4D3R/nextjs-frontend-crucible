@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "../components/header";
 import LoginForm from "../components/loginform";
-
+import { Footer } from "../components/footer";
 
 const JobSearch = () => {
 
@@ -46,14 +46,14 @@ const JobSearch = () => {
     return (
         // <h1>{JSON.stringify(resources2)}</h1>
         <>
-            {/* <Header /> */}
+            <Header />
             {user ?
                 <>
                     <div>
                         <div className=" flex h-5/6">
                             <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center">
-                                <input placeholder="job" name="keyword" className="my-20 w-3/5 h-10 bg-emerald-200 rounded" />
-                                <input name="location" placeholder="location" className="w-3/5 h-10 bg-emerald-200 rounded" />
+                                <input placeholder="Dream Job" name="keyword" className="my-20 w-3/5 h-10 bg-emerald-200 rounded" />
+                                <input name="Job Location" placeholder="location" className="w-3/5 h-10 bg-emerald-200 rounded" />
                                 <button className="m-5 rounded shadow-xl bg-emerald-500 px-10 py-5 ">Search</button>
                             </form>
                         </div>
@@ -70,6 +70,7 @@ const JobSearch = () => {
                 </> :
                 <LoginForm onLogin={loginHandler} />
             }
+            <Footer />
         </>
     )
 }
