@@ -13,8 +13,8 @@ module.exports = {
         'color-highlight-dark':'#88D317', //Electric Lime Highlight
         'color-bright':'#67AECA', //Bright Blue
         'color-bright-dark':'#F5F5F5', //Light Grey
-        'color-shadow':'#675682', //Dull Purple Amethyst
-        'color-shadow-dark':'#6E3667', //"Bright" Violet
+        'color-shadow':'#675682', //header/footer Dull Purple Amethyst
+        'color-shadow-dark':'#6E3667', //header/footer "Bright" Violet
         'color-contrast':'#5F0F4E', //Deep Purple
         'color-contrast-dark':'#535353', //Deep Grey
         

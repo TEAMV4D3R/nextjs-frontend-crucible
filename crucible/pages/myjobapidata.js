@@ -1,5 +1,6 @@
 import useResource from "../hooks/useResource";
 import { Header } from "../components/header";
+import { Footer } from "../components/footer";
 
 const MyJobsApiData = () => {
     const { resources, createResource, deleteResource } = useResource();
@@ -7,6 +8,7 @@ const MyJobsApiData = () => {
         <>
             <Header />
             <h1>{JSON.stringify(resources)}</h1>
+            <Footer />
         </>
     )
 }
