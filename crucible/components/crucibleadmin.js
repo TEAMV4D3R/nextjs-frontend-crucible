@@ -21,7 +21,7 @@ const CrucibleAdmin = ({ user, onLogin }) => {
         <Routes>
             <Route path='/' element={<DashBoard user={user} onLogin={onLogin} />}></Route>
             <Route path='/myjobs' element={<MyJobs user={user} onLogin={onLogin} />}></Route>
-            <Route path='/jobsearch' element={<JobSearch user={user} onLogin={onLogin} />}></Route>
+            <Route path='/jobsearch' element={<JobSearch user={user} resources2={resources2} />}></Route>
             <Route path='/findjobs' element={<FindJobs user={user} onLogin={onLogin} />}></Route>
             <Route path='/chatboard' element={<ChatBoard user={user} onLogin={onLogin} />}></Route>
             <Route path='/aboutthedevs' element={<AboutTheDevs user={user} onLogin={onLogin} />}></Route>

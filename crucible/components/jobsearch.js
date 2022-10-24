@@ -1,9 +1,6 @@
-import useResourceTwo from "../hooks/useResourcetwo";
 import { useState } from "react";
 
-const JobSearch = () => {
-    const { resources2, createResource2, deleteResource2 } = useResourceTwo();
-    console.log(resources2)
+const JobSearch = ({ resources2 }) => {
 
     const [searchResult, setSearchResult] = useState([]);
 
