@@ -5,6 +5,7 @@ import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
 import { CreateJobModal } from "../components/createjobmodal"
 import { Header } from "../components/header";
+import { Footer } from "../components/footer";
 import { useState } from 'react';
 
 const MyJobs = () => {
@@ -42,6 +43,7 @@ const MyJobs = () => {
     return (
         <>
             <Header />
+        <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
             <div className="flex flex-col" >
                 {/* <Head>
                <title>My Jobs</title>
@@ -53,12 +55,12 @@ const MyJobs = () => {
                 </div> :
                     <LoginForm onLogin={loginHandler} />}
 
-                {user ? <div>
+                {/* {user ? <div>
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
                     }
                 </div> :
-                    <LoginForm onLogin={loginHandler} />}
+                    <LoginForm onLogin={loginHandler} />} */}
 
                 {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
@@ -92,7 +94,9 @@ const MyJobs = () => {
             </div > */}
 
             </div>
-        </>
+        </main>
+            <Footer />
+            </>
 
     )
 }
