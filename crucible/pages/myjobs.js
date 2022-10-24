@@ -1,23 +1,17 @@
 import useResource from "../hooks/useResource";
 import { useAuth } from "../contexts/auth";
-<<<<<<< HEAD:crucible/components/myjobs.js
-import LoginForm from "./loginform";
-import OverviewModal from "./overviewmodal";
-import { MyJobsTable } from "./myjobsform";
-import { CreateJobModal } from "./createjobmodal"
-import { Header } from "./header";
-=======
 import LoginForm from "../components/loginform";
 import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobsform";
 import { CreateJobModal } from "../components/createjobmodal"
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
->>>>>>> main:crucible/pages/myjobs.js
 import { useState } from 'react';
 import Head from "next/head";
 
-const MyJobs = ({ user }) => {
+const MyJobs = () => {
+    const { user, login, logout } = useAuth();
+
     const { resources, createResource, deleteResource } = useResource();
 
     const [searchResult, setSearchResult] = useState([]);
@@ -48,14 +42,6 @@ const MyJobs = ({ user }) => {
     }
 
     return (
-<<<<<<< HEAD:crucible/components/myjobs.js
-        <div className="flex flex-col" >
-            <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
-            {resources &&
-                <MyJobsTable input={resources} deleteStand={deleteResource} />
-            }
-            {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
-=======
         <>
             <Head>
                <title>My Jobs</title>
@@ -80,7 +66,6 @@ const MyJobs = ({ user }) => {
                 
 
                 {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
->>>>>>> main:crucible/pages/myjobs.js
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -92,11 +77,11 @@ const MyJobs = ({ user }) => {
                                 No Cookie Stands Available
                             </h1>
                         }*/}
-            {/* {resources &&
+                {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
                         } */}
-            {/*  </div>
+                {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">
@@ -108,10 +93,6 @@ const MyJobs = ({ user }) => {
                         </div>
                     }
                 </main>
-<<<<<<< HEAD:crucible/components/myjobs.js
-            </div > */}
-        </div>
-=======
                 
             </div > */}
 
@@ -119,7 +100,6 @@ const MyJobs = ({ user }) => {
         </main>
             <Footer />
             </>
->>>>>>> main:crucible/pages/myjobs.js
 
     )
 }
