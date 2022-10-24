@@ -7,6 +7,7 @@ import { CreateJobModal } from "../components/createjobmodal"
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { useState } from 'react';
+import Head from "next/head";
 
 const MyJobs = () => {
     const { user, login, logout } = useAuth();
@@ -37,23 +38,17 @@ const MyJobs = () => {
         }
         console.log("user.username", user.username)
         createResource(data);
-        // We need to create views and urls from the user model to pass the owner back to display info for the user only.
+       
     }
 
     return (
         <>
+            <Head>
+               <title>My Jobs</title>
+            </Head>
             <Header />
         <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
             <div className="flex flex-col" >
-                {/* <Head>
-               <title>My Jobs</title>
-           </Head> */}
-
-                {user ? <div>
-                    <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
-
-                </div> :
-                    <LoginForm onLogin={loginHandler} />}
 
                 {/* {user ? <div>
                     {resources &&
@@ -61,6 +56,14 @@ const MyJobs = () => {
                     }
                 </div> :
                     <LoginForm onLogin={loginHandler} />} */}
+
+                {user ? <div>
+                    <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
+
+                </div> :
+                    <LoginForm onLogin={loginHandler} />}
+
+                
 
                 {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
@@ -90,7 +93,7 @@ const MyJobs = () => {
                         </div>
                     }
                 </main>
-                <Footer input={resources} className="z-40" />
+                
             </div > */}
 
             </div>
