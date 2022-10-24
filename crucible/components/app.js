@@ -5,7 +5,7 @@ import useResourceTwo from "../hooks/useResourcetwo";
 
 const App = ({ user, logout, onLogin }) => {
     // const { resources2, createResource2, deleteResource2 } = useResourceTwo();
-    resources2 = []
+    const resources2 = []
 
     return (
         <Router>
