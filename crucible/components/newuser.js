@@ -1,4 +1,5 @@
 import { createContext, useSate, useContext } from "react";
+import Modal from 'react-modal';
 
 const NewUser = ({ onCreate }) => {
 
@@ -15,12 +16,12 @@ const NewUser = ({ onCreate }) => {
     // Need to send this information to the user database.
 
     return (
-        
-        <div className="bg-color-main dark:bg-color-main-dark h-[calc(100vh-10em)] dark:text-color-bright-dark">
+        <>
             <Modal
         isOpen={props.modalIsOpen}
         ariaHideApp={false}
     ></Modal>
+        <div className="bg-color-main dark:bg-color-main-dark h-[calc(100vh-10em)] dark:text-color-bright-dark">
             <h1 className="flex flex-col mx-auto w-4/6 items-center">New User Sign Up</h1>
             <div className=" flex h-5/6 text-white">
                 <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center text-black">
@@ -36,7 +37,7 @@ const NewUser = ({ onCreate }) => {
                 </form>
             </div>
         </div>
-        
+        </>
     );
 }
 
