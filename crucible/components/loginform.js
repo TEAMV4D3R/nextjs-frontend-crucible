@@ -26,17 +26,17 @@ const LoginForm = ({ onLogin }) => {
                 </div>
             </header>
             <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
-                <h1 className="flex flex-col mx-auto w-4/6 items-center text-slate-800">Welcome to Crucible</h1>
-                <div className=" flex flex-col h-1/2 w-1/3 mx-auto text-white bg-slate-200 rounded shadow-2xl">
+                <h1 className="flex flex-col mx-auto w-4/6 items-center text-color-shadow-dark">Welcome to Crucible</h1>
+                <div className=" flex flex-col h-1/2 w-1/3 mx-auto text-white bg-slate-200 rounded shadow-2xl dark:bg-color-contrast-dark">
                     <h2 className="mt-10 text-2xl text-center text-slate-800">Login to your account</h2>
                     <form onSubmit={submitHandler} className="flex flex-col mx-auto w-full items-center text-black">
-                        <div className="flex items-center bg-color-contrast dark:bg-color-contrast-dark h-12 w-full mt-10 w-4/5 rounded">
-                            <BsFillPersonFill className="text-4xl text-slate-800 mx-2" />
-                            <input placeholder="Username" name="username" className="login-input w-full h-12 bg-color-contrast dark:bg-color-contrast-dark rounded  mr-12 " />
+                        <div className="flex items-center bg-color-contrast h-12 w-full mt-10 w-4/5 rounded">
+                            <BsFillPersonFill className="text-4xl text-slate-400 mx-2" />
+                            <input placeholder="Username" name="username" className="login-input w-full h-12 bg-color-contrast rounded  mr-12 " />
                         </div>
-                        <div className="flex items-center bg-color-contrast dark:bg-color-contrast-dark h-12 w-full mt-10  w-4/5 rounded">
-                            <AiFillLock className="text-4xl text-slate-800 mx-2" />
-                            <input type="password" name="password" placeholder="Password" align="left" className="login-input w-full h-12 bg-color-contrast dark:bg-color-contrast-dark mr-12 rounded" />
+                        <div className="flex items-center bg-color-contrast h-12 w-full mt-10  w-4/5 rounded">
+                            <AiFillLock className="text-4xl text-slate-400 mx-2" />
+                            <input type="password" name="password" placeholder="Password" align="left" className="login-input w-full h-12 bg-color-contrast mr-12 rounded" />
                         </div>
                         <button className="mt-10 w-4/5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
                                 px-10 py-3 ">Log In</button>
