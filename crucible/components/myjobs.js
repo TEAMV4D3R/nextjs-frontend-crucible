@@ -1,31 +1,14 @@
 import useResource from "../hooks/useResource";
-import { useAuth } from "../contexts/auth";
-import LoginForm from "../components/loginform";
-import OverviewModal from "../components/overviewmodal";
 import { MyJobsTable } from "../components/myjobstable";
 import { CreateJobModal } from "../components/createjobmodal"
-import { Header } from "../components/header";
-import { Footer } from "../components/footer";
 import { useState } from 'react';
 import Head from "next/head";
 
 const MyJobs = () => {
-    const { user, login, logout } = useAuth();
 
     const { resources, createResource, updateResource, deleteResource } = useResource();
 
-    const [searchResult, setSearchResult] = useState([]);
-    const [open, setOpen] = useState(false);
-
-
-    const loginHandler = (newUser) => {
-        console.log(newUser)
-        login(newUser.username, newUser.password)
-    }
-
-    const [input, setInput] = useState([]);
     const [modalIsOpen, setIsModalOpen] = useState(false)
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -53,10 +36,10 @@ const MyJobs = () => {
                 <div className="flex flex-col items-center content-center" >
 
                     <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5" onClick={() => {
-                        setOpen(true)
+                        setIsModalOpen(true)
                     }}>Add New Job</button>
 
-                    <CreateJobModal handleSubmit={handleSubmit} open={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
+                    <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
 
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
@@ -95,7 +78,6 @@ const MyJobs = () => {
 
                 </div>
             </main>
-            <Footer />
         </>
 
     )

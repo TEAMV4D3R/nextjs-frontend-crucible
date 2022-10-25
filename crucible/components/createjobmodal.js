@@ -1,29 +1,28 @@
 import Modal from 'react-modal';
-// import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
-// import Modal from '@mui/material/Modal';
-
-// const style = {
-//     position: 'absolute',
-//     top: '50%',
-//     left: '50%',
-//     transform: 'translate(-50%, -50%)',
-//     width: 'full',
-//     bgcolor: 'background.paper',
-//     border: '2px solid #000',
-//     boxShadow: 24,
-//     p: 4,
-//   };
 
 export const CreateJobModal = (props) => {
+
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            width: "60%",
+            transform: 'translate(-50%, -50%)',
+            backgroundColor: '#675682'
+        }
+    };
+
     return (
         <>
             <Modal
                 isOpen={props.modalIsOpen}
+                style={customStyles}
                 ariaHideApp={false}
-                className=""
             >
-                <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-color-shadow dark:bg-color-shadow-dark w-full rounded drop-shadow-md z-0'>
+                <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-color-shadow dark:bg-color-shadow-dark w-full rounded z-0'>
                     <h1 className="flex flex-col mx-auto items-center">Add a Job to Track!</h1>
 
                     <div className="flex flex-col flex-grow items-center content-center justify-center w-full">
@@ -60,12 +59,10 @@ export const CreateJobModal = (props) => {
                             <h6 className='mx-auto my-auto p-5'>Create</h6></button>
                     </div>
                 </form>
-            </Modal >
-
+            </Modal>
         </>
     )
 }
-
 
 
 
