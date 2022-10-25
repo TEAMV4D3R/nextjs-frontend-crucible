@@ -21,8 +21,8 @@ const MyJobs = () => {
         login(newUser.username, newUser.password)
     }
 
-    // const [input, setInput] = useState([]);
-    // const [modalIsOpen, setIsModalOpen] = useState(false)
+    const [input, setInput] = useState([]);
+    const [modalIsOpen, setIsModalOpen] = useState(false)
 
 
     const handleSubmit = (e) => {
@@ -35,8 +35,8 @@ const MyJobs = () => {
             status: e.target.sts.value,
             note_name: e.target.note.value,
             owner: 1
+            // Need to update the owner
         }
-        console.log("user.username", user.username)
         createResource(data);
        
     }
@@ -50,19 +50,20 @@ const MyJobs = () => {
         <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
             <div className="flex flex-col" >
 
-                {/* {user ? <div>
+                <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark px-8 py-5" onClick={() => {
+                                setIsModalOpen(true)
+                            }}>Add New Job</button>
+
+                <div>
+                <CreateJobModal handleSubmit={handleSubmit} modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
+                </div>
+                
+                {user ? <div>
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
                     }
                 </div> :
-                    <LoginForm onLogin={loginHandler} />} */}
-
-                {user ? <div>
-                    <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
-
-                </div> :
                     <LoginForm onLogin={loginHandler} />}
-
                 
 
                 {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">

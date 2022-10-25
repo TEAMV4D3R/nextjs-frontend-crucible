@@ -12,6 +12,8 @@ export const Index = () => {
     login(newUser?.username, newUser?.password)
   }
   
+  // We need to add a function that sends new user information to the database
+
   return (
     <>
       {user ?
