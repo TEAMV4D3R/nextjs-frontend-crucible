@@ -15,7 +15,7 @@ const LoginForm = ({ onLogin }) => {
     // Need to redirect to new-user form for signup button on-click
 
     return (
-        <div className="bg-color-main dark:bg-color-main-dark h-[calc(100vh-10em)] dark:text-color-bright-dark">
+        <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
             <h1 className="flex flex-col mx-auto w-4/6 items-center">User Login</h1>
             <div className=" flex h-5/6 text-white">
                 <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center text-black">
