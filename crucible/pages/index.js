@@ -1,30 +1,25 @@
 import styles from '../styles/Home.module.css';
-import CrucibleAdmin from "../components/crucibleadmin";
+import App from "../components/app";
 import LoginForm from "../components/loginform";
+import Header from "../components/header";
 import { useAuth } from "../contexts/auth";
-import UserHome from './userhome';
 
 export const Index = () => {
 
-  const { user, login, logout } = useAuth();
+  const { user, login, tokens, logout } = useAuth();
+  console.log("tokens", tokens)
 
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
   }
-  
+
   return (
     <>
       {user ?
-        <>
-          < CrucibleAdmin user={user} logout={logout} />
-          <UserHome />
-        </> :
-        <LoginForm onLogin={loginHandler} />
-      }
-      
+        <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
+        <LoginForm onLogin={loginHandler} />}
     </>
   )
-
 }
 
 export default Index; 

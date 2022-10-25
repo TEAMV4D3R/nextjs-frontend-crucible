@@ -38,34 +38,34 @@ const MyJobs = () => {
         }
         console.log("user.username", user.username)
         createResource(data);
-       
+
     }
 
     return (
         <>
             <Head>
-               <title>My Jobs</title>
+                <title>My Jobs</title>
             </Head>
             <Header />
-        <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
-            <div className="flex flex-col" >
+            <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
+                <div className="flex flex-col" >
 
-                {/* {user ? <div>
+                    {/* {user ? <div>
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
                     }
                 </div> :
                     <LoginForm onLogin={loginHandler} />} */}
 
-                {user ? <div>
-                    <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
+                    {user ? <div>
+                        <CreateJobModal handleSubmit={handleSubmit} className="z-0" />
 
-                </div> :
-                    <LoginForm onLogin={loginHandler} />}
+                    </div> :
+                        <LoginForm onLogin={loginHandler} />}
 
-                
 
-                {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
+
+                    {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -77,11 +77,11 @@ const MyJobs = () => {
                                 No Cookie Stands Available
                             </h1>
                         }*/}
-                {/* {resources &&
+                    {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
                         } */}
-                {/*  </div>
+                    {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">
@@ -96,10 +96,10 @@ const MyJobs = () => {
                 
             </div > */}
 
-            </div>
-        </main>
+                </div>
+            </main>
             <Footer />
-            </>
+        </>
 
     )
 }
