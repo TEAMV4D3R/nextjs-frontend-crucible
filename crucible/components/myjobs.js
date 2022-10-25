@@ -32,14 +32,14 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
             <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
                 <div className="flex flex-col items-center content-center" >
 
-                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5" onClick={() => {
+                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5 w-4/5" onClick={() => {
                         setIsModalOpen(true)
                     }}>Add New Job</button>
 
                     <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
 
                     {resources &&
-                        <MyJobsTable input={resources} deleteStand={deleteResource} updateResource={updateResource} />
+                        <MyJobsTable input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-4/5" />
                     }
 
                 </div>

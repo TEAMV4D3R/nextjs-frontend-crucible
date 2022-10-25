@@ -31,12 +31,12 @@ const LoginForm = ({ onLogin }) => {
                     <h2 className="mt-10 text-2xl text-center text-slate-800">Login to your account</h2>
                     <form onSubmit={submitHandler} className="flex flex-col mx-auto w-full items-center text-black">
                         <div className="flex items-center bg-color-contrast dark:bg-color-contrast-dark h-12 w-full mt-10 w-4/5 rounded">
-                            <BsFillPersonFill className="text-4xl text-slate-800 ml-2" />
-                            <input placeholder="Username" name="username" className=" w-full h-12 bg-color-contrast dark:bg-color-contrast-dark rounded  mr-10 " />
+                            <BsFillPersonFill className="text-4xl text-slate-800 mx-2" />
+                            <input placeholder="Username" name="username" className="login-input w-full h-12 bg-color-contrast dark:bg-color-contrast-dark rounded  mr-12 " />
                         </div>
                         <div className="flex items-center bg-color-contrast dark:bg-color-contrast-dark h-12 w-full mt-10  w-4/5 rounded">
-                            <AiFillLock className="text-4xl text-slate-800 ml-2" />
-                            <input type="password" name="password" placeholder="Password" align="left" className="w-full h-12 bg-color-contrast dark:bg-color-contrast-dark mr-10 rounded" />
+                            <AiFillLock className="text-4xl text-slate-800 mx-2" />
+                            <input type="password" name="password" placeholder="Password" align="left" className="login-input w-full h-12 bg-color-contrast dark:bg-color-contrast-dark mr-12 rounded" />
                         </div>
                         <button className="mt-10 w-4/5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
                                 px-10 py-3 ">Log In</button>

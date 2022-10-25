@@ -28,3 +28,7 @@ h1 {
 /* .MuiBox-root {
 
 } */
+
+.login-input:focus {
+  outline: none
+}
