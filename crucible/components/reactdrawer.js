@@ -15,8 +15,7 @@ export const ReactDrawer = (props) => {
             
         >
             <div className="bg-color-contrast dark:bg-color-contrast-dark h-screen leading-[3rem]">
-                <h1><Link href="/userhome">{user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase())
-   .join(' ')}</Link></h1>
+                <h1><Link href="/userhome">{user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase()).join(' ')}</Link></h1>
                 <h1><Link href="/myjobs">My Jobs</Link></h1>
                 {/* <h1><Link href="/myjobapidata">My Jobs - API Data</Link></h1> */}
                 <h1><Link href="/jobsearch">Job Search</Link></h1>
