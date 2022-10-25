@@ -11,6 +11,7 @@ export function useAuth() {
     if (!auth) {
         throw new Error("You forgot to set up AuthProvider!");
     }
+    console.log("auth", auth)
     return auth;
 }
 
