@@ -53,8 +53,9 @@ export default function useResourceTwo() {
     }
 
     async function updateResource2(resource) {
-        // STRETCH
-        // Add ability for user to update an existing resource
+    
+        deleteResource(resource)
+        createResource(resource)
     }
 
 
