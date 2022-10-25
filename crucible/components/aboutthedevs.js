@@ -21,8 +21,8 @@ const AboutTheDevs = () => {
                 <h1 className="text-center">About The Devs</h1>
                 <div className="flex flex-row justify-evenly items-center h-5/6">
                     <div className="p-3 w-5/12">
-                        <div className="rounded drop-shadow-2xl mx-auto flex justify-center">
-                            < Image src={imgs[0]} alt="Image of Jae" width={250} height={250} className="rounded-md" />
+                        <div className="rounded drop-shadow-2xl w-64 h-64 mx-auto flex justify-center shadow-lg">
+                            < Image src={imgs[0]} alt="Image of Jae" width={256} height={256} className="rounded-md" />
                         </div>
                         <div className="flex justify-center mt-3">
                             <a href="https://www.linkedin.com/in/jae-loney/"><AiFillLinkedin className="m-2 text-3xl" /></a>
@@ -31,8 +31,8 @@ const AboutTheDevs = () => {
                         <p className="text-justify p-3">Jae is a Software Developer with experience in Project Management and Accounts Management who loves learning, solving problems, and organizing teams. Jae enjoys working with Javascript in both front-end and back-end applications and hopes to use their skills to bring websites to life with people who are working to change the world for the better. </p>
                     </div>
                     <div className="p-3 w-5/12">
-                        <div className="rounded drop-shadow-2xl mx-auto flex justify-center">
-                            < Image src={imgs[1]} alt="Image of Jacob" width={250} height={250} className="rounded-md" />
+                        <div className="rounded drop-shadow-2xl  w-64 h-64 mx-auto flex justify-center shadow-lg">
+                            < Image src={imgs[1]} alt="Image of Jacob" width={256} height={256} className="rounded-md" />
                         </div>
                         <div className="flex justify-center mt-3">
                             <a href="https://www.linkedin.com/in/jacobamsbury/"><AiFillLinkedin className="m-2 text-3xl" /></a>
@@ -43,8 +43,8 @@ const AboutTheDevs = () => {
                 </div>
                 <div className="flex flex-row justify-evenly items-center h-5/6 ">
                     <div className="p-3 w-5/12">
-                        <div className="rounded drop-shadow-2xl mx-auto flex justify-center">
-                            < Image src={imgs[2]} alt="Image of JJ" width={250} height={250} className="rounded-md" />
+                        <div className="rounded drop-shadow-2xl  w-64 h-64 mx-auto flex justify-center shadow-lg">
+                            < Image src={imgs[2]} alt="Image of JJ" width={256} height={256} className="rounded-md" />
                         </div>
                         <div className="flex justify-center mt-3">
                             <a href="https://www.linkedin.com/in/jpescandor/"><AiFillLinkedin className="m-2 text-3xl" /></a>
@@ -53,8 +53,8 @@ const AboutTheDevs = () => {
                         <p className="text-justify p-3">Jae is a Software Developer with experience in Project Management and Accounts Management who loves learning, solving problems, and organizing teams. Jae enjoys working with Javascript in both front-end and back-end applications and hopes to use their skills to bring websites to life with people who are working to change the world for the better. </p>
                     </div>
                     <div className="p-3 w-5/12">
-                        <div className="rounded drop-shadow-2xl mx-auto flex justify-center">
-                            < Image src={imgs[3]} alt="Image of Pedro" width={250} height={250} className="rounded-md" />
+                        <div className="rounded drop-shadow-2xl  w-64 h-64 mx-auto flex justify-center shadow-lg">
+                            < Image src={imgs[3]} alt="Image of Pedro" width={260} height={256} className="rounded-md" />
                         </div>
                         <div className="flex justify-center mt-3">
                             <a href="https://www.linkedin.com/in/pedrogperezalvarez/"><AiFillLinkedin className="m-2 text-3xl" /></a>

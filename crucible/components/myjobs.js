@@ -8,10 +8,6 @@ import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { useState } from 'react';
 import Head from "next/head";
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
 
 const MyJobs = () => {
     const { user, login, logout } = useAuth();
@@ -60,12 +56,11 @@ const MyJobs = () => {
                         setOpen(true)
                     }}>Add New Job</button>
 
-                    <CreateJobModal handleSubmit={handleSubmit} open={open} setOpen={setOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
+                    <CreateJobModal handleSubmit={handleSubmit} open={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
 
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
                     }
-                    <Button onClick={()=>setOpen(true)}>Open modal</Button>
 
                     {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
