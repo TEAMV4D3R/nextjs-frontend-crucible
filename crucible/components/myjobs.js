@@ -2,12 +2,16 @@ import useResource from "../hooks/useResource";
 import { useAuth } from "../contexts/auth";
 import LoginForm from "../components/loginform";
 import OverviewModal from "../components/overviewmodal";
-import { MyJobsTable } from "../components/myjobsform";
+import { MyJobsTable } from "../components/myjobstable";
 import { CreateJobModal } from "../components/createjobmodal"
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { useState } from 'react';
 import Head from "next/head";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
 
 const MyJobs = () => {
     const { user, login, logout } = useAuth();
@@ -15,6 +19,8 @@ const MyJobs = () => {
     const { resources, createResource, updateResource, deleteResource } = useResource();
 
     const [searchResult, setSearchResult] = useState([]);
+    const [open, setOpen] = useState(false);
+
 
     const loginHandler = (newUser) => {
         console.log(newUser)
@@ -38,35 +44,30 @@ const MyJobs = () => {
             // Need to update the owner
         }
         createResource(data);
-       
+
     }
+
 
     return (
         <>
             <Head>
-               <title>My Jobs</title>
+                <title>My Jobs</title>
             </Head>
-            <Header />
-        <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
-            <div className="flex flex-col" >
+            <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
+                <div className="flex flex-col items-center content-center" >
 
-                <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark px-8 py-5" onClick={() => {
-                                setIsModalOpen(true)
-                            }}>Add New Job</button>
+                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5" onClick={() => {
+                        setOpen(true)
+                    }}>Add New Job</button>
 
-                <div>
-                <CreateJobModal handleSubmit={handleSubmit} modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
-                </div>
-                
-                {user ? <div>
+                    <CreateJobModal handleSubmit={handleSubmit} open={open} setOpen={setOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
+
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} />
                     }
-                </div> :
-                    <LoginForm onLogin={loginHandler} />}
-                
+                    <Button onClick={()=>setOpen(true)}>Open modal</Button>
 
-                {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
+                    {/*<div className="bg-emerald-50 text-black items-center h-screen content-center items-center">
                 <Header user={props.user} logout={props.logout} />
                 <main className='flex flex-col items-center h-5/6 overflow-scroll'>
                     <CreateJob handleSubmit={handleSubmit} className="z-0" />
@@ -78,11 +79,11 @@ const MyJobs = () => {
                                 No Cookie Stands Available
                             </h1>
                         }*/}
-                {/* {resources &&
+                    {/* {resources &&
                             resources.length > 0 &&
                             <MyJobsTable input={resources} deleteStand={deleteResource} />
                         } */}
-                {/*  </div>
+                    {/*  </div>
                     {resources &&
                         resources.length > 0 &&
                         <div className="flex z-0">
@@ -97,10 +98,10 @@ const MyJobs = () => {
                 
             </div > */}
 
-            </div>
-        </main>
+                </div>
+            </main>
             <Footer />
-            </>
+        </>
 
     )
 }
