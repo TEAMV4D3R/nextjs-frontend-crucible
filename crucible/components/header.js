@@ -4,7 +4,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import 'react-modern-drawer/dist/index.css';
 import { useState } from 'react';
 import Link from 'next/link';
-import useDarkMode from "../useDarkMode";
+import useDarkMode from "../hooks/useDarkMode";
 
 export const Header = ({ user, logout }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -23,17 +23,14 @@ export const Header = ({ user, logout }) => {
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link href="/"><AiFillHome /></Link>
-                <AiOutlineMenu onClick={toggleDrawer} />
-                <ReactDrawer
-                    isOpen={isOpen}
-                    toggleDrawer={toggleDrawer}
-                />
+                
+                
 
                  {colorTheme === "light" ? (
                     <svg
                     onClick={() => setTheme("light")}
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="black"
@@ -49,7 +46,7 @@ export const Header = ({ user, logout }) => {
                     <svg
                     onClick={() => setTheme("dark")}
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-7 w-7"
+                    className="h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="black"
@@ -62,7 +59,11 @@ export const Header = ({ user, logout }) => {
                     />
                     </svg>
                 )}
-            
+                <AiOutlineMenu onClick={toggleDrawer} />
+                <ReactDrawer
+                    isOpen={isOpen}
+                    toggleDrawer={toggleDrawer}
+                />
             </div>
         </header>
     )
