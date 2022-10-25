@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'color-main':'#EFDCCE', //Creme
+        'color-main':'#F6F6F6', //Creme
         'color-main-dark':'#1A0315', //Dark Plum
         'color-highlight':'#E52A6F', //Pink Highlight
         'color-highlight-dark':'#88D317', //Electric Lime Highlight
