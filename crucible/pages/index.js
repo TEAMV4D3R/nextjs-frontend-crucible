@@ -7,12 +7,11 @@ import { useAuth } from "../contexts/auth";
 export const Index = () => {
 
   const { user, login, tokens, logout } = useAuth();
-  console.log("tokens", tokens)
 
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
   }
-  
+
   // We need to add a function that sends new user information to the database
 
   return (

@@ -15,12 +15,13 @@ import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 
 const CrucibleAdmin = ({ user, onLogin, tokens }) => {
-    const { resources, createResource, deleteResource } = useResource();
+
+    const { resources, createResource, updateResource, deleteResource } = useResource();
 
     return (
         <Routes>
             <Route path='/' element={<DashBoard user={user} onLogin={onLogin} />}></Route>
-            <Route path='/myjobs' element={<MyJobs user={user} onLogin={onLogin} resources={resources} createResource={createResource} deleteResource={deleteResource} />}></Route>
+            <Route path='/myjobs' element={<MyJobs user={user} onLogin={onLogin} resources={resources} createResource={createResource} deleteResource={deleteResource} updateResource={updateResource} />}></Route>
             <Route path='/jobsearch' element={<JobSearch user={user} tokens={tokens} />}></Route>
             <Route path='/chatboard' element={<ChatBoard user={user} onLogin={onLogin} />}></Route>
             <Route path='/aboutthedevs' element={<AboutTheDevs user={user} onLogin={onLogin} />}></Route>

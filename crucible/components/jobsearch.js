@@ -1,4 +1,4 @@
-import useResourceTwo from "../hooks/useResourcetwo";
+import useResource from "../hooks/useResourcetwo";
 import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "./header";
@@ -6,16 +6,11 @@ import LoginForm from "./loginform";
 
 const JobSearch = () => {
 
+    const resources = [];
 
-    const resources2 = []
-    console.log(resources2)
 
     const [searchResult, setSearchResult] = useState([]);
 
-    const loginHandler = (newUser) => {
-        console.log(newUser)
-        login(newUser.username, newUser.password)
-    }
 
     // will need access to scraper to find info
     function submitHandler(event) {

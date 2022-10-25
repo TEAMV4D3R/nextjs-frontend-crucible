@@ -5,17 +5,21 @@ import useSWR from 'swr';
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export const apiUrl2 = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
+import { useState } from 'react';
+
 
 export default function useResource() {
 
     const { tokens, logout } = useAuth();
 
-    const { data, error, mutate } = useSWR([apiUrl, tokens], fetchResource);
+    const { data, error, mutate } = useSWR([apiUrl, itokens], fetchResource);
 
+
+    const [itokens, setItokens] = useState(tokens)
 
     async function fetchResource(url) {
 
-        if (!tokens) {
+        if (!itokens) {
             return;
         }
 
@@ -68,7 +72,7 @@ export default function useResource() {
 
         return {
             headers: {
-                'Authorization': 'Bearer ' + tokens.access,
+                'Authorization': 'Bearer ' + itokens.access,
             },
         };
     }
@@ -84,7 +88,7 @@ export default function useResource() {
     return {
         resources: data,
         error,
-        loading: tokens && !error && !data,
+        loading: itokens && !error && !data,
         createResource,
         deleteResource,
         updateResource,

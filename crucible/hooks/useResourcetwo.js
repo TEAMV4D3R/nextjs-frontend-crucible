@@ -6,11 +6,11 @@ export const apiUrl = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
 
 
-export default function useResource2() {
+export default function useResource() {
 
     const { tokens, logout } = useAuth();
 
-    const { data, error, mutate } = useSWR([apiUrl, tokens], fetchResource);
+    const data = fetchResource(apiUrl);
 
     async function fetchResource(url) {
 
@@ -54,7 +54,7 @@ export default function useResource2() {
     // }
 
     // async function updateResource2(resource) {
-    
+
     //     deleteResource(resource)
     //     createResource(resource)
     // }
@@ -79,12 +79,9 @@ export default function useResource2() {
     }
 
     return {
-        resources2: data,
-        error,
-        loading2: tokens && !error && !data,
-    };
+        resources: data
+    }
 }
-
 /* STRETCH
 This approach works, but it's not very snappy for the user.
 Check the SWR docs to see if you can "optomistically" render updated state while the API response is pending.
