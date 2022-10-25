@@ -20,7 +20,7 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                 <h1><Link to="/chatboard">Chat Board</Link></h1>
                 <h1><Link to="/aboutthedevs">About The Devs</Link></h1>
                 <div className="flex justify-center">
-                    <button className="bg-color-highlight dark:bg-color-highlight-dark rounded p-2 m-2 flex flex-col items-center " onClick={logout}>Logout</button>
+                    <button className="bg-color-highlight dark:bg-color-highlight-dark rounded p-2 m-2 flex flex-col items-center " onClick={() => logout()}>Logout</button>
                 </div>
             </div>
         </Drawer>
