@@ -12,7 +12,7 @@ import Head from "next/head";
 const MyJobs = () => {
     const { user, login, logout } = useAuth();
 
-    const { resources, createResource, deleteResource } = useResource();
+    const { resources, createResource, updateResource, deleteResource } = useResource();
 
     const [searchResult, setSearchResult] = useState([]);
 
