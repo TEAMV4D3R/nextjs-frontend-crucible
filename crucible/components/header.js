@@ -19,18 +19,18 @@ export const Header = ({ user, logout }) => {
                 <h1 className="my-auto text-3xl m-5">Crucible</h1>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
-                <Link href="/"><AiFillHome /></Link>
-                
-                
+                <Link to="/"><AiFillHome /></Link>
+
+
 
                 {colorTheme === "light" ? (
                     <svg
-                    onClick={() => setTheme("light")}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="black"
+                        onClick={() => setTheme("light")}
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="black"
                     >
                         <path
                             strokeLinecap="round"
@@ -41,12 +41,12 @@ export const Header = ({ user, logout }) => {
                     </svg>
                 ) : (
                     <svg
-                    onClick={() => setTheme("dark")}
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="black"
+                        onClick={() => setTheme("dark")}
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="black"
                     >
                         <path
                             strokeLinecap="round"
