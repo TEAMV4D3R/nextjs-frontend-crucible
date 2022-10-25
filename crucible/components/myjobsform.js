@@ -4,7 +4,7 @@ const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
 export const MyJobsTable = (resources) => {
-    const trackingjobs = ["Id","Position", "Location", "Description", "Employer", "Status", "Created", "Updated", "Notes", "Owner"]
+    const trackingjobs = ["Position", "Location", "Description", "Employer", "Status", "Created", "Updated", "Notes"]
 
     return (
         <div className='rounded shadow-xl z-0'>

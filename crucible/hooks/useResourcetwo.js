@@ -28,6 +28,36 @@ export default function useResource2() {
         }
     }
 
+    // async function createResource2(info) {
+
+    //     try {
+    //         await axios.post(apiUrl, info, config());
+    //         mutate(); // mutate causes complete collection to be refetched
+    //     } catch (err) {
+    //         handleError(err);
+    //     }
+    // }
+
+    // async function deleteResource2(info) {
+
+    //     try {
+    //         const url = `${apiUrl}${info.id}/`;
+    //         console.log("delete")
+    //         console.log("config", JSON.stringify(config()));
+    //         const res = await axios.delete(url, config());
+    //         console.log("res", res)
+    //         mutate(); // mutate causes complete collection to be refetched
+    //     } catch (err) {
+    //         console.log("error")
+    //         // handleError(err);
+    //     }
+    // }
+
+    // async function updateResource2(resource) {
+    
+    //     deleteResource(resource)
+    //     createResource(resource)
+    // }
 
 
     // helper function to handle getting Authorization headers EXACTLY right

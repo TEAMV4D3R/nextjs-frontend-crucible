@@ -41,6 +41,7 @@ export default function useResource() {
         }
     }
 
+
     async function deleteResource(info) {
 
         try {
@@ -57,8 +58,8 @@ export default function useResource() {
     }
 
     async function updateResource(resource) {
-        // STRETCH
-        // Add ability for user to update an existing resource
+        deleteResource(resource)
+        createResource(resource)
     }
 
 

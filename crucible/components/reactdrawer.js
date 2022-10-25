@@ -10,7 +10,6 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
             onClose={toggleDrawer}
             direction='right'
             size='20vw'
-
         >
             <div className="bg-color-contrast dark:bg-color-contrast-dark h-screen leading-[3rem]">
                 <h1>{user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase())
