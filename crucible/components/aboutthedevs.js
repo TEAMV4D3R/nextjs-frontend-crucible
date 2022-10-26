@@ -50,7 +50,7 @@ const AboutTheDevs = () => {
                             <a href="https://www.linkedin.com/in/jpescandor/"><AiFillLinkedin className="m-2 text-3xl" /></a>
                             <a href="https://github.com/jjescandor"><AiFillGithub className="m-2 text-3xl" /></a>
                         </div>
-                        <p className="text-justify p-3">Jae is a Software Developer with experience in Project Management and Accounts Management who loves learning, solving problems, and organizing teams. Jae enjoys working with Javascript in both front-end and back-end applications and hopes to use their skills to bring websites to life with people who are working to change the world for the better. </p>
+                        <p className="text-justify p-3">JJ has 10 years of experience in the military and in the private sector. JJ exhibits proficiency in software engineering, data science and program management. JJ specializes in in Artificial Intelligence/Machine Learning, C/C++ backend, Cloud Native Applications, Micro services, Distributed Systems Design/Architecture. JJ is also a robotics enthusiasts and builds and programs Arduino aerial robots in his spare time. </p>
                     </div>
                     <div className="p-3 w-5/12">
                         <div className="rounded drop-shadow-2xl  w-64 h-64 mx-auto flex justify-center shadow-lg">
@@ -60,7 +60,7 @@ const AboutTheDevs = () => {
                             <a href="https://www.linkedin.com/in/pedrogperezalvarez/"><AiFillLinkedin className="m-2 text-3xl" /></a>
                             <a href="https://github.com/PGPere"><AiFillGithub className="m-2 text-3xl" /></a>
                         </div>
-                        <p className="text-justify p-3">I have over 15+ years of work experience through various finance roles in corporations like Microsoft and Amazon.  Most recently I pivot into a fintech product role at Expedia.   As a software developer in fintech I plan to develop innovative financial  solutions for customer pain points that have been ignored by commercial banks. As a team member, my style is direct and collaborative which leads to building a better product or service together with others.</p>
+                        <p className="text-justify p-3">Pedro have over 15+ years of work experience through various finance roles in corporations like Microsoft and Amazon.  Most recently I pivot into a fintech product role at Expedia.   As a software developer in fintech I plan to develop innovative financial  solutions for customer pain points that have been ignored by commercial banks. As a team member, my style is direct and collaborative which leads to building a better product or service together with others.</p>
                     </div>
                 </div>
             </main>

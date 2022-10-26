@@ -8,7 +8,7 @@ export const MyJobsTable = (resources) => {
     // console.log("resources: ", resources)
     return (
         // <div className='flex flex-col content-center items-center w-11/12 rounded shadow-xl z-0'>
-        <table className='z-0'>
+        <table className='z-0 w-4/5'>
             <thead>
                 <tr>
                     {trackingjobs?.map((item, idx) => <th className={`${thStyles}`} key={idx}>{item}</th>)}
