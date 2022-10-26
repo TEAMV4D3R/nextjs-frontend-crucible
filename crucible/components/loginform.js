@@ -28,7 +28,6 @@ const LoginForm = ({ onLogin }) => {
             </header>
             <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                 <h1 className="flex flex-col mx-auto w-4/6 items-center text-color-shadow-dark">Welcome to Crucible</h1>
-                <h2 className="text-color-shadow-dark text-xl text-center w-3/5 mx-auto my-10">Crucible is an amazing application that can help you find that dream job you have been looking for in the job search page, which can be found in the menu! Crucible conveniently helps you log, and take notes of the jobs that you have applied for.</h2>
                 <div className=" flex flex-col h-1/2 w-1/3 mx-auto text-white bg-slate-200 rounded shadow-2xl dark:bg-color-contrast-dark overflow-auto">
                     <h2 className="mt-10 text-2xl text-center text-slate-800">Login to your account</h2>
                     <form onSubmit={submitHandler} className="flex flex-col mx-auto w-full items-center text-black">
@@ -48,6 +47,7 @@ const LoginForm = ({ onLogin }) => {
                         </div>
                     </form>
                 </div>
+                <h2 className="text-color-shadow-dark text-xl text-center w-2/5 mx-auto my-10">Crucible is an amazing application that can help you find that dream job you have been looking for in the job search page, which can be found in the menu! Crucible conveniently helps you log, and take notes of the jobs that you have applied for.</h2>
             </div>
         </>
     );
