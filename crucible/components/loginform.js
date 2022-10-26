@@ -19,7 +19,7 @@ const LoginForm = ({ onLogin }) => {
     // Need to redirect to new-user form for signup button on-click
 
     return (
-        <main  className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen>
+        <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen>
             <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
                 <div className="flex">
                     <h1 className="my-auto text-3xl m-5">Crucible</h1>
