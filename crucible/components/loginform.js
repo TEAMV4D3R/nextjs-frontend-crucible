@@ -40,11 +40,11 @@ const LoginForm = ({ onLogin }) => {
                         </div>
                         <button className="mt-10 w-4/5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
                                 px-10 py-3 ">Log In</button>
-                    </form>
                     <div className="flex justify-center mt-10">
                         <h2 class="text-xl text-slate-700">New to Crucible?</h2>
                         <button className="mx-2 text-xl text-purple-700">Sign Up</button>
                     </div>
+                    </form>
                 </div>
             </div>
         </>
