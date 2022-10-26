@@ -6,31 +6,27 @@ export const apiUrl = process.env.NEXT_PUBLIC_API_URL_2;
 import { useAuth } from '../contexts/auth';
 
 
-    export default function useResourceTwo() {
+export default function useResource() {
 
-        const { tokens, logout } = useAuth();
-    
-        // const { data, error, mutate } = useSWR([apiUrl], fetchResource);
-       
-    
-    
-        async function fetchResource(url) {
-    
-            try {
-                const response = await axios.get(url);
-    
-                console.log("returned response", response.data)
-                return response.data;
-    
-            } catch (err) {
-                console.log("err",err)
-                handleError(err);
-            }
+    const { tokens, logout } = useAuth();
+
+    const data = fetchResource(apiUrl);
+
+    async function fetchResource(url) {
+
+        if (!tokens) {
+            return;
         }
 
+        try {
+            const response = await axios.get(url, config());
 
-        const data = fetchResource(apiUrl)
+            return response.data;
 
+        } catch (err) {
+            handleError(err);
+        }
+    }
 
     // async function createResource2(info) {
 
@@ -65,14 +61,14 @@ import { useAuth } from '../contexts/auth';
 
 
     // helper function to handle getting Authorization headers EXACTLY right
-    // function config() {
+    function config() {
 
-    //     return {
-    //         headers: {
-    //             'Authorization': 'Bearer ' + tokens.refresh,
-    //         },
-    //     };
-    // }
+        return {
+            headers: {
+                'Authorization': 'Bearer ' + tokens.refresh,
+            },
+        };
+    }
 
     function handleError(err) {
         console.error(err);
@@ -83,7 +79,7 @@ import { useAuth } from '../contexts/auth';
     }
 
     return {
-        resources2: data
+        resources: data
     }
 }
 /* STRETCH

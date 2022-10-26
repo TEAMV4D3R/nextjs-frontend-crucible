@@ -3,7 +3,7 @@ import useSWR from 'swr';
 // USE RESOURCE IS BRINGING IN THE MYJOBS DATA FROM THE DATABASE
 
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-export const apiUrl2 = process.env.NEXT_PUBLIC_API_URL_2;
+
 import { useAuth } from '../contexts/auth';
 import { useState } from 'react';
 
