@@ -1,15 +1,12 @@
-import useResourceTwo from "../hooks/useResourcetwo";
-import { useAuth } from "../contexts/auth";
 import { useState } from "react";
-import { Header } from "./header";
-import LoginForm from "./loginform";
 import { useEffect } from "react"
+import { BsSearch } from "react-icons/bs";
+import { IoLocation } from "react-icons/io5";
 import axios from 'axios';
+import { FaSuitcase, FaBuilding } from "react-icons/fa";
+
 
 const JobSearch = () => {
-
-    const resources2 = [];
-    console.log("resources 2 json data = ", resources2);
 
     const [searchResult, setSearchResult] = useState([]);
 
@@ -24,7 +21,6 @@ const JobSearch = () => {
             .catch(error => console.log("ERRORRRRRR = ", error.message));
     }, []);
 
-    const resources = [];
 
     // will need access to scraper to find info
     function submitHandler(event) {
@@ -38,8 +34,7 @@ const JobSearch = () => {
 
     const findJobs = (keyword, location) => {
         console.log("logging: ", keyword, ",", location)
-        console.log(resources2)
-        const tempSearchResult = resources2.filter(arr => {
+        const tempSearchResult = jobs.filter(arr => {
             console.log("arr position: ", arr.position.toLowerCase())
             console.log(keyword)
             return arr.position.toLowerCase().includes(keyword.toLowerCase()) && arr.location.toLowerCase().includes(location.toLowerCase())
@@ -52,26 +47,44 @@ const JobSearch = () => {
 
     return (
         <>
-            <div className="bg-color-main dark:bg-color-main-dark h-[calc(100vh-10em)] dark:text-color-bright-dark">
-                <h1 className="flex flex-col mx-auto w-4/6 items-center">Job Search</h1>
-                <div className=" flex h-5/6">
-
-                    <form onSubmit={submitHandler} className="flex flex-col mx-auto w-4/6 items-center text-color-bright-dark">
-                        <input placeholder="Dream Job" name="keyword" className="my-20 w-3/5 h-10 bg-color-contrast dark:bg-color-contrast-dark rounded" />
-                        <input name="location" placeholder="Job Location" className="w-3/5 h-10 bg-color-contrast dark:bg-color-contrast-dark rounded" />
-                        <button className="m-10 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
-                                px-10 py-5 ">Search</button>
-                    </form>
-                </div>
-                {searchResult.map((el, idx) => {
-                    return <div key={idx} className="m-5">
-                        <h6>Position:{el.position}</h6>
-                        <h6>Location:{el.location}</h6>
-                        <h6>Company:{el.company}</h6>
-                        <h6>Application Url:{el.url}</h6>
+            <div className="flex flex-col item-start content-start bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
+                <form onSubmit={submitHandler} className="flex flex-col mt-20 mx-auto w-4/5 items-center text-color-bright-dark">
+                    <div className="flex flex-row items-center w-full">
+                        <div className="flex items-center w-2/3 h-20 mr-5 bg-color-contrast dark:bg-color-contrast-dark rounded">
+                            <BsSearch className="mx-5 text-4xl" />
+                            <input placeholder="Dream Job" name="keyword" className="input w-4/5 py-5 h-20 mr-5 bg-color-contrast dark:bg-color-contrast-dark rounded" />
+                        </div>
+                        <div className="flex items-center w-1/3 h-20 bg-color-contrast dark:bg-color-contrast-dark rounded">
+                            <IoLocation className="mx-5 text-4xl" />
+                            <input name="location" placeholder="Job Location" className="input w-1/3 py-5 h-20 bg-color-contrast dark:bg-color-contrast-dark rounded" />
+                        </div>
                     </div>
-                })
-                }
+                    <button className="m-10 rounded shadow-xl hy-20 bg-color-highlight dark:bg-color-highlight-dark dark:text-slate-900 w-full py-5">Search</button>
+                </form>
+                <div className="flex flex-col w-4/5 mx-auto">
+                    {searchResult.map((el, idx) => {
+                        return (
+                            <div key={idx} className="flex items-center content-center mx-auto my-10 p-5 w-2/5 justify-between bg-violet-200 dark:bg-color-contrast-dark rounded shadow-2xl">
+                                <div className="flex flex-col">
+                                    <div className="flex items-center">
+                                        <FaSuitcase className="text-xl" />
+                                        <h6 className="m-3">{el.position}</h6>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <IoLocation className="text-xl" />
+                                        <h6 className="m-3">{el.location}</h6>
+                                    </div>
+                                    <div className="flex items-center">
+                                        <FaBuilding className="text-xl" />
+                                        <h6 className="m-3">{el.company}</h6>
+                                    </div>
+                                </div>
+                                <button className="mr-10 p-5 bg-color-shadow dark:bg-color-highlight-dark rounded dark:text-slate-900" href={el.url}>Apply</button>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
             </div>
         </>
     )

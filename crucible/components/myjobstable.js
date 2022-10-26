@@ -1,13 +1,12 @@
-const tdStyles = "my-10  mx-auto p-3 bg-violet-200 text-gray-800"
-const thStyles = "my-10  mx-auto p-3 bg-color-shadow text-gray-800"
-const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
+import { AiFillEdit } from "react-icons/ai";
+
+const tdStyles = "my-10  mx-auto p-3 bg-violet-200 text-slate-900 dark:bg-neutral-700 dark:text-color-bright-dark"
+const thStyles = "my-10  mx-auto p-3 bg-color-shadow text-slate-900 dark:bg-neutral-900 dark:text-color-bright-dark"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
 export const MyJobsTable = (resources) => {
-    const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes","","","", "Delete"]
-    // console.log("resources: ", resources)
+    const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes", "", "", "", "Delete"]
     return (
-        // <div className='flex flex-col content-center items-center w-11/12 rounded shadow-xl z-0'>
         <table className='z-0 w-4/5'>
             <thead>
                 <tr>
@@ -23,15 +22,15 @@ export const MyJobsTable = (resources) => {
                                 <button onClick={(() => {
                                     resources.updateResource(item)
                                 })} className='hover:text-red-200 mx-auto my-3'>
-                                    Edit
+                                    <AiFillEdit className="text-2xl" />
                                 </button>
                             </td>
                             <td className="py-5 px-3">{item.position}</td>
-                            <td className="py-5 px-3 bg-gray-300">{item.location}</td>
+                            <td className="py-5 px-3">{item.location}</td>
                             <td className="py-5 px-3">{item.description}</td>
-                            <td className="py-5 px-3 bg-gray-300">{item.employer}</td>
+                            <td className="py-5 px-3">{item.employer}</td>
                             <td className="py-5 px-3">{item.status}</td>
-                            <td colSpan={4} className="py-5 px-3 bg-gray-300">{item.note_name}</td>
+                            <td colSpan={4} className="py-5 px-3">{item.note_name}</td>
                             <td className='flex items-center content-center'>
                                 <button onClick={(() => {
                                     console.log(item.id)
