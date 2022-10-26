@@ -1,5 +1,6 @@
 import Drawer from 'react-modern-drawer';
 import { Link } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
 import { FaSuitcase, FaSearch } from "react-icons/fa";
 import { BsFillChatDotsFill, BsPeopleFill } from "react-icons/bs";
 
@@ -15,6 +16,9 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
             <div className="bg-color-contrast dark:bg-color-contrast-dark h-screen leading-[3rem]">
                 <h2 className='text-2xl text-slate-900 dark:text-color-bright-dark text-center p-2'>Welcome {user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase())
                     .join(' ')}</h2>
+                <div className='flex content-center items-center mx-10'>
+                    <AiFillHome className="mx-3 text-slate-900 " />
+                    <h6 className='text-slate-900 mx-3'><Link to="/">Dashboard</Link></h6></div>
                 <div className='flex content-center items-center mx-10'>
                     <FaSuitcase className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 mx-3'><Link to="/myjobs">My Jobs</Link></h6></div>
