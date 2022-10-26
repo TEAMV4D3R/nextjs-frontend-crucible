@@ -47,6 +47,8 @@ const LoginForm = ({ onLogin }) => {
                     </form>
                 </div>
             </div>
+            <footer className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-full>
+            </footer>
         </>
     );
 }
