@@ -47,7 +47,7 @@ const LoginForm = ({ onLogin }) => {
                     </form>
                 </div>
             </div>
-        </main>
+        </div>
     );
 }
 
