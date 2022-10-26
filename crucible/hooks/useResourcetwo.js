@@ -19,7 +19,7 @@ import { useAuth } from '../contexts/auth';
             try {
                 const response = await axios.get(url);
     
-                console.log("returned response")
+                console.log("returned response", response.data)
                 return response.data;
     
             } catch (err) {

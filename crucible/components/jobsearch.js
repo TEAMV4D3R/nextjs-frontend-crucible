@@ -6,7 +6,7 @@ import LoginForm from "./loginform";
 
 const JobSearch = () => {
 
-    const resources2 = [];
+    const {resources2} = useResourceTwo();
     console.log("resources 2 json data = ", resources2);
 
     const [searchResult, setSearchResult] = useState([]);
