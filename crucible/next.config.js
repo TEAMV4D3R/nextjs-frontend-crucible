@@ -9,9 +9,10 @@ module.exports = nextConfig
 //   async rewrites() {
 //     return [
 //       {
-//         source: '/api/* http://44.202.123.64/',
-//         destination: 'http://localhost:4000/:path*'
+//         source: '/api/* http://127.0.0.1:8000/api/v1/scraped_jobs/',
+//         destination: 'http://localhost:3000/:path*'
 //       }
 //     ]
 //   }
 // }
+
