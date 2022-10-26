@@ -3,15 +3,28 @@ import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "./header";
 import LoginForm from "./loginform";
+import {useEffect} from "react"
+import axios from 'axios';
 
 const JobSearch = () => {
 
-    const {resources2} = useResourceTwo();
+    const resources2 = [];
     console.log("resources 2 json data = ", resources2);
 
     const [searchResult, setSearchResult] = useState([]);
     
+    const [jobs, setJobs] = useState([]);
 
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/v1/scraped_jobs/')
+            .then(res => {
+                setJobs(res.data);
+                console.log("recieved data = ",res.data);
+            })
+            .catch(error => console.log("ERRORRRRRR = ", error.message));
+    }, []);
+
+    const resources = [];
 
     // will need access to scraper to find info
     function submitHandler(event) {
