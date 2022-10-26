@@ -13,7 +13,7 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
             direction='right'
             size='20vw'
         >
-            <div className="bg-color-contrast dark:bg-color-contrast-dark h-screen leading-[3rem]">
+            <div className="bg-color-contrast dark:bg-color-contrast-dark h-screen]">
                 <h2 className='text-2xl text-slate-900 dark:text-color-bright-dark text-center p-2'>Welcome {user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase())
                     .join(' ')}</h2>
                 <div className='flex content-center items-center mx-10'>
