@@ -4,7 +4,7 @@ const tfStyles = "my-10  mx-auto p-3 bg-emerald-500 text-red-300"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
 export const MyJobsTable = (resources) => {
-    const trackingjobs = ["Position", "Location", "Description", "Employer", "Status", "Created", "Updated", "Notes", "Delete"]
+    const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes","","","", "Delete"]
     // console.log("resources: ", resources)
     return (
         // <div className='flex flex-col content-center items-center w-11/12 rounded shadow-xl z-0'>
@@ -19,15 +19,19 @@ export const MyJobsTable = (resources) => {
                     return (
                         <tr key={idx} className={`${tdStyles}`}>
 
-
+                            <td className='flex items-center content-center'>
+                                <button onClick={(() => {
+                                    resources.updateResource(item)
+                                })} className='hover:text-red-200 mx-auto my-3'>
+                                    Edit
+                                </button>
+                            </td>
                             <td className="py-5 px-3">{item.position}</td>
-                            <td className="py-5 px-3">{item.location}</td>
+                            <td className="py-5 px-3 bg-gray-300">{item.location}</td>
                             <td className="py-5 px-3">{item.description}</td>
-                            <td className="py-5 px-3">{item.employer}</td>
+                            <td className="py-5 px-3 bg-gray-300">{item.employer}</td>
                             <td className="py-5 px-3">{item.status}</td>
-                            <td className="py-5 px-3">{item.created}</td>
-                            <td className="py-5 px-3">{item.updated}</td>
-                            <td className="py-5 px-3">{item.note_name}</td>
+                            <td colSpan={4} className="py-5 px-3 bg-gray-300">{item.note_name}</td>
                             <td className='flex items-center content-center'>
                                 <button onClick={(() => {
                                     console.log(item.id)
