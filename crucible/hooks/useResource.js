@@ -35,9 +35,12 @@ export default function useResource() {
 
 
     async function createResource(info) {
+        // if (!itokens) {
+        //     return;
+        // }
 
         try {
-            const Response = await axios.post(apiUrl, info, config());
+            await axios.post(apiUrl, info, config());
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
             console.log(err);

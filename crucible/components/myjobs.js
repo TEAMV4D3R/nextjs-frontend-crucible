@@ -19,6 +19,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
             owner: 1
             // Need to update the owner
         }
+        console.log("job stuff = ", data)
         createResource(data);
 
     }
@@ -36,7 +37,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
                         setIsModalOpen(true)
                     }}>Add New Job</button>
 
-                    <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} input={resources} className="w-full z-40" />
+                    <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleSubmit={handleSubmit} input={resources} className="w-full z-40" />
 
                     {resources &&
                         <MyJobsTable input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-4/5" />

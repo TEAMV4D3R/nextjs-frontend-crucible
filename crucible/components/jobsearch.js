@@ -1,4 +1,4 @@
-import useResource from "../hooks/useResourcetwo";
+import useResourceTwo from "../hooks/useResourcetwo";
 import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "./header";
@@ -6,10 +6,11 @@ import LoginForm from "./loginform";
 
 const JobSearch = () => {
 
-    const resources = [];
-
+    const resources2 = [];
+    console.log("resources 2 json data = ", resources2);
 
     const [searchResult, setSearchResult] = useState([]);
+    
 
 
     // will need access to scraper to find info
