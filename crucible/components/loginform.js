@@ -25,7 +25,7 @@ const LoginForm = ({ onLogin }) => {
                     <h1 className="my-auto text-3xl m-5">Crucible</h1>
                 </div>
             </header>
-            <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
+            <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-vh">
                 <h1 className="flex flex-col mx-auto w-4/6 items-center text-color-shadow-dark">Welcome to Crucible</h1>
                 <div className=" flex flex-col h-1/2 w-1/3 mx-auto text-white bg-slate-200 rounded shadow-2xl dark:bg-color-contrast-dark">
                     <h2 className="mt-10 text-2xl text-center text-slate-800">Login to your account</h2>
