@@ -12,10 +12,10 @@ export default function useResource() {
 
     const { tokens, logout } = useAuth();
 
+    const [itokens, setItokens] = useState(tokens)
+
     const { data, error, mutate } = useSWR([apiUrl, itokens], fetchResource);
 
-
-    const [itokens, setItokens] = useState(tokens)
 
     async function fetchResource(url) {
 

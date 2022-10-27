@@ -3,7 +3,7 @@ import { useAuth } from "../contexts/auth";
 import { useState } from "react";
 import { Header } from "./header";
 import LoginForm from "./loginform";
-import {useEffect} from "react"
+import { useEffect } from "react"
 import axios from 'axios';
 
 const JobSearch = () => {
@@ -12,14 +12,14 @@ const JobSearch = () => {
     console.log("resources 2 json data = ", resources2);
 
     const [searchResult, setSearchResult] = useState([]);
-    
+
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/v1/scraped_jobs/')
+        axios.get(process.env.NEXT_PUBLIC_API_URL_3)
             .then(res => {
                 setJobs(res.data);
-                console.log("recieved data = ",res.data);
+                console.log("recieved data = ", res.data);
             })
             .catch(error => console.log("ERRORRRRRR = ", error.message));
     }, []);
