@@ -10,7 +10,7 @@ const UserHome = (props) => {
     // const[userData, setUserData] = useState([]);
 
     console.log("dashboard resources", props.resources)
-     
+
     // console.log("RESOURCES", resources)
     // useEffect(() => {
     //     const data = resources?resources.filter(element => {
@@ -19,40 +19,50 @@ const UserHome = (props) => {
     //     }): [];
     //     setUserData(data)
     // }, []);
-    
-    console.log("DATA",props.userData)
 
-    const[userApplied, setUserApplied] = useState(0);
-    const[userPending, setUserPending] = useState(0);
-    const[userInterview, setUserInterview] = useState(0);
-    const[userDeclined, setUserDeclined] = useState(0);
-    const[userAccepted, setUserAccepted] = useState(0);
-    
+    console.log("DATA", props.userData)
+
+    const [userApplied, setUserApplied] = useState(0);
+    const [userPending, setUserPending] = useState(0);
+    const [userInterview, setUserInterview] = useState(0);
+    const [userDeclined, setUserDeclined] = useState(0);
+    const [userAccepted, setUserAccepted] = useState(0);
+
     useEffect(() => {
-        if (props.resources){
+        if (props.resources) {
+            let apply = 0;
+            let pending = 0;
+            let interview = 0;
+            let decline = 0;
+            let accepted = 0;
+
             for (let item of props.resources) {
-                if (props.user === item?.owner) { 
-                    switch (item.status){
+                if (props.user === item?.owner) {
+                    switch (item.status) {
                         case "Applied":
-                            setUserApplied(userApplied+1);
+                            apply++;
                             break;
                         case "Pending":
-                            setUserPending(userPending+1);
+                            pending++;
                             break;
-                        case "Interview":
-                            setUserInterview(userInterview+1);
+                        case "Interview Scheduled":
+                            interview++;
                             break;
-                        case "Declined":
-                            setUserDeclined(userDeclined+1);
+                        case "Declined Offer":
+                            decline++
                             break;
-                        case "Accepted":
-                            setUserAccepted(userAccepted+1);
+                        case "Accepted Offer":
+                            accepted++
                             break;
                     }
                 }
             }
-            }
-
+            setUserApplied(apply)
+            setUserPending(pending)
+            setUserInterview(interview)
+            setUserDeclined(decline)
+            setUserAccepted(accepted)
+        }
     }, []);
 
 
