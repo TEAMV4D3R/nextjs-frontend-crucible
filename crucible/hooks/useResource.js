@@ -35,9 +35,6 @@ export default function useResource() {
 
 
     async function createResource(info) {
-        // if (!itokens) {
-        //     return;
-        // }
 
         try {
             await axios.post(apiUrl, info, config());
@@ -64,11 +61,18 @@ export default function useResource() {
         }
     }
 
-    async function updateResource(resource) {
-        deleteResource(resource)
-        createResource(resource)
+    async function updateResource(resource, id) {
+        try {
+            console.log("id, resource:", id, resource)
+            const url = `${apiUrl}${id}/`;
+            const res = await axios.put(url,resource, config());
+            console.log("Updated item:", res)
+            mutate(); // mutate causes complete collection to be refetched
+        } catch (err) {
+            console.log("error")
+            handleError(err);
+        }
     }
-
 
     // helper function to handle getting Authorization headers EXACTLY right
     function config() {
@@ -100,5 +104,5 @@ export default function useResource() {
 
 /* STRETCH
 This approach works, but it's not very snappy for the user.
-Check the SWR docs to see if you can "optomistically" render updated state while the API response is pending.
+Check the SWR docs to see if you can "optimistically" render updated state while the API response is pending.
 */

@@ -16,7 +16,7 @@ const JobSearch = () => {
         axios.get(process.env.NEXT_PUBLIC_API_URL_3)
             .then(res => {
                 setJobs(res.data);
-                console.log("recieved data = ", res.data);
+                console.log("received data = ", res.data);
             })
             .catch(error => console.log("ERRORRRRRR = ", error.message));
     }, []);

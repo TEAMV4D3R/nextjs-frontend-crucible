@@ -17,14 +17,11 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
             status: e.target.sts.value,
             note_name: e.target.note.value,
             owner: 1
-            // Need to update the owner
-            // Need to only display data that belongs to the owner
         }
         console.log("job stuff = ", data)
         createResource(data);
 
     }
-
 
     return (
         <>
