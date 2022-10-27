@@ -1,7 +1,7 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = ({ onLogin, setUserAuth }) => {
 
     function submitHandler(event) {
         event.preventDefault();
@@ -9,6 +9,7 @@ const LoginForm = ({ onLogin }) => {
             username: event.target.username.value,
             password: event.target.password.value,
         };
+        // setUserAuth(true)
         onLogin(newUser);
     }
 

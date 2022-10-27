@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 
@@ -17,14 +17,27 @@ export function useAuth() {
 
 export function AuthProvider(props) {
 
+    const [user, setUser] = useState(null);
+    const [token, setToken] = useState(null);
+    useEffect(() => {
+        const item = JSON.parse(localStorage.getItem('user')) || null;
+        setUser(item)
+    }, []);
+
+    useEffect(() => {
+        const item = JSON.parse(localStorage.getItem('token')) || null;
+        setToken(item)
+    }, []);
+
     const [state, setState] = useState({
-        tokens: null,
-        user: null,
+        tokens: token,
+        user: user,
         login,
         logout,
     });
 
     async function login(username, password) {
+
 
         const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
 
