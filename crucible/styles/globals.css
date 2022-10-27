@@ -8,6 +8,10 @@
   /* background-color: rgb(248, 250, 252); */
 }
 
+body {
+  background-color: rgb(248, 250, 252);
+}
+
 header {
   height: 5em;
 }
@@ -29,6 +33,6 @@ h1 {
 
 } */
 
-.login-input:focus {
+.input:focus {
   outline: none
 }
