@@ -36,7 +36,7 @@ const AboutTheDevs = () => {
                             <a href="https://www.linkedin.com/in/jacobamsbury/"><AiFillLinkedin className="m-2 text-3xl" /></a>
                             <a href="https://github.com/KajeTheCat"><AiFillGithub className="m-2 text-3xl" /></a>
                         </div>
-                        <p className="text-justify p-3">Jacob is a Software Engineer, with experience in troubleshooting and finding bugs. He has cultivated his skills at Code Fellows, and will utilize them to and develop video games in the near future. He is a very customer-oriented developer and listens to his clients' needs.</p>
+                        <p className="text-justify p-3">Jacob is a Software Engineer, with experience in troubleshooting and finding bugs. He has cultivated his skills at Code Fellows, and will utilize them to and develop video games in the near future. He is a very customer-oriented developer and listens to his clients&apos; needs.</p>
                     </div>
                 </div>
                 <div className="flex flex-row justify-evenly items-center h-5/6 ">
