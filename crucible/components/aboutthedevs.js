@@ -1,4 +1,3 @@
-import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import Image from 'next/image'
 import Head from "next/head";
@@ -17,7 +16,6 @@ const AboutTheDevs = () => {
                 <title>About The Devs</title>
             </Head>
             <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark w-screen">
-                {/* h-[calc(100vh-10em)] */}
                 <h1 className="text-center">About The Devs</h1>
                 <div className="flex flex-row justify-evenly items-center h-5/6">
                     <div className="p-3 w-5/12">

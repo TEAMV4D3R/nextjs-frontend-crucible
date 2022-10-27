@@ -64,9 +64,10 @@ export default function useResource() {
         }
     }
 
-    async function updateResource(resource) {
+    async function updateResource(resource, id) {
         try {
-            const url = `${apiUrl}${resource.id}/`;
+            console.log("id, resource:", id, resource)
+            const url = `${apiUrl}${id}/`;
             const res = await axios.put(url,resource, config());
             console.log("Ures:", res)
             mutate(); // mutate causes complete collection to be refetched

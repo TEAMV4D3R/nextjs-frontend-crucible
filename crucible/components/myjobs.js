@@ -25,23 +25,23 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
 
     }
 
-    const handleUpdate = (e) => {
-        e.preventDefault()
-        const data = {
-            position: e.target.pos.value,
-            location: e.target.loc.value,
-            description: e.target.desc.value,
-            employer: e.target.emp.value,
-            status: e.target.sts.value,
-            note_name: e.target.note.value,
-            owner: 1
-            // Need to update the owner
-            // Need to only display data that belongs to the owner
-        }
-        console.log("job stuff = ", data)
-        updateResource(data);
+    // const handleUpdate = (e) => {
+    //     e.preventDefault()
+    //     const data = {
+    //         position: e.target.pos.value,
+    //         location: e.target.loc.value,
+    //         description: e.target.desc.value,
+    //         employer: e.target.emp.value,
+    //         status: e.target.sts.value,
+    //         note_name: e.target.note.value,
+    //         owner: 1
+    //         // Need to update the owner
+    //         // Need to only display data that belongs to the owner
+    //     }
+    //     console.log("job stuff = ", data)
+    //     updateResource(data);
 
-    }
+    // }
 
     return (
         <>
