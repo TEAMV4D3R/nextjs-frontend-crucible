@@ -39,28 +39,28 @@ export const UpdateJobModal = (props) => {
                         <div className='flex flex-grow w-1/3 flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3 rounded'>
                             <label>Description</label>
                             <select name="desc" defaultValue={props.input.description} key={props.input.description} className='bg-sky-100 w-5/6 m-2 rounded' required id="selectList">
-                                <option value="option 1">Full Time</option>
-                                <option value="option 2">Part Time</option>
-                                <option value="option 1">Intern</option>
-                                <option value="option 2">Contract</option>
+                                <option value="Full Time">Full Time</option>
+                                <option value="Part Time">Part Time</option>
+                                <option value="Intern">Intern</option>
+                                <option value="Contract">Contract</option>
                             </select>
                         </div>
-                        <div className='flex w-1/3 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3'>
+                        <div className='flex w-1/3 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3 rounded'>
                             <label>Status</label>
                             <select name="sts" defaultValue={props.input.status} key={props.input.status} className='bg-sky-100 w-5/6 m-2 rounded' required id="selectList">
-                                <option value="option 1">Applied</option>
-                                <option value="option 1">Pending</option>
-                                {/* <option value="option 2">Ghosted</option> */}
-                                <option value="option 2">Interview scheduled</option>
-                                <option value="option 2">Accepted offer</option>
-                                <option value="option 2">Declined offer</option>
+                                <option value="Applied">Applied</option>
+                                <option value="Pending">Pending</option>
+                                {/* <option value="Ghosted">Ghosted</option> */}
+                                <option value="Interview Scheduled">Interview Scheduled</option>
+                                <option value="Declined Offer">Declined Offer</option>
+                                <option value="Accepted Offer">Accepted Offer</option>
                             </select>
                         </div>
-                        <div className='flex w-1/3 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3'>
+                        <div className='flex w-1/3 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3 rounded'>
                             <label>Employer</label>
                             <input name="emp" defaultValue={props.input.employer} key={props.input.employer} className='bg-sky-100 w-5/6 m-2 rounded' required />
                         </div>
-                        <div className='flex w-4/5 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3'>
+                        <div className='flex w-4/5 flex-grow flex-col items-center content-center justify-evenly bg-color-bright dark:bg-color-bright-dark dark:text-black h-5/6 m-3 rounded'>
                             <label>Notes</label>
                             <textarea name="note" defaultValue={props.input.note_name} key={props.input.note_name} className='bg-sky-100 w-5/6 m-2 rounded' required />
                         </div>

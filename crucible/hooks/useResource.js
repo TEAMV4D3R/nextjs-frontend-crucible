@@ -54,7 +54,7 @@ export default function useResource() {
             console.log("delete")
             console.log("config", JSON.stringify(config()));
             const res = await axios.delete(url, config());
-            console.log("res", res)
+            // console.log("res", res)
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
             console.log("error")
@@ -67,7 +67,7 @@ export default function useResource() {
             console.log("id, resource:", id, resource)
             const url = `${apiUrl}${id}/`;
             const res = await axios.put(url, resource, config());
-            console.log("Updated item:", res)
+            // console.log("Updated item:", res)
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
             console.log("error")
