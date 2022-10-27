@@ -1,10 +1,6 @@
-
 import {
-    Switch,
     Route,
     Routes,
-    useRouteMatch,
-    useParams,
 } from 'react-router-dom'
 
 import useResource from "../hooks/useResource";

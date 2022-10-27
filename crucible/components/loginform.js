@@ -1,8 +1,5 @@
-import { createContext, useSate, useContext } from "react";
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
-
-
 
 const LoginForm = ({ onLogin }) => {
 
@@ -12,11 +9,8 @@ const LoginForm = ({ onLogin }) => {
             username: event.target.username.value,
             password: event.target.password.value,
         };
-
         onLogin(newUser);
     }
-
-    // Need to redirect to new-user form for signup button on-click
 
     return (
         <>
