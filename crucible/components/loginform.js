@@ -1,6 +1,7 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
-import { Header } from '../components/header';
+import { Link } from 'next/link';
+import DevPage from "../pages/devpage";
 
 
 const LoginForm = ({ onLogin, setUserAuth }) => {
@@ -18,8 +19,13 @@ const LoginForm = ({ onLogin, setUserAuth }) => {
     return (
         <>
             <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
-                <div className="flex">
+                <div className="flex justify-between items-center w-full">
                     <h1 className="my-auto text-3xl m-5">Crucible</h1>
+                    <div>
+                        <h1 className="my-auto text-2xl m-5">
+                            <a href="/devpage">About The Devs</a>
+                        </h1>
+                    </div>
                 </div>
             </header>
             {/* <Header /> */}
