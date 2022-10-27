@@ -1,5 +1,4 @@
 import axios from 'axios';
-import useSWR from 'swr';
 // USE RESOURCE **TWO** IS BRINGING IN THE SCRAPEDJOBS DATA FROM THE DATABASE
 
 export const apiUrl = process.env.NEXT_PUBLIC_API_URL_2;
@@ -28,38 +27,6 @@ export default function useResource() {
         }
     }
 
-    // async function createResource2(info) {
-
-    //     try {
-    //         await axios.post(apiUrl, info, config());
-    //         mutate(); // mutate causes complete collection to be refetched
-    //     } catch (err) {
-    //         handleError(err);
-    //     }
-    // }
-
-    // async function deleteResource2(info) {
-
-    //     try {
-    //         const url = `${apiUrl}${info.id}/`;
-    //         console.log("delete")
-    //         console.log("config", JSON.stringify(config()));
-    //         const res = await axios.delete(url, config());
-    //         console.log("res", res)
-    //         mutate(); // mutate causes complete collection to be refetched
-    //     } catch (err) {
-    //         console.log("error")
-    //         // handleError(err);
-    //     }
-    // }
-
-    // async function updateResource2(resource) {
-
-    //     deleteResource(resource)
-    //     createResource(resource)
-    // }
-
-
     // helper function to handle getting Authorization headers EXACTLY right
     function config() {
 
@@ -82,7 +49,3 @@ export default function useResource() {
         resources: data
     }
 }
-/* STRETCH
-This approach works, but it's not very snappy for the user.
-Check the SWR docs to see if you can "optomistically" render updated state while the API response is pending.
-*/
