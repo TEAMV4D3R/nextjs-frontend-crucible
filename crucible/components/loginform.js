@@ -1,5 +1,7 @@
 import { BsFillPersonFill } from "react-icons/bs";
 import { AiFillLock } from "react-icons/ai";
+import { Header } from '../components/header';
+
 
 const LoginForm = ({ onLogin, setUserAuth }) => {
 
@@ -18,9 +20,9 @@ const LoginForm = ({ onLogin, setUserAuth }) => {
             <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
                 <div className="flex">
                     <h1 className="my-auto text-3xl m-5">Crucible</h1>
-
                 </div>
             </header>
+            {/* <Header /> */}
             <div className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                 <h1 className="flex flex-col mx-auto w-4/6 items-center text-color-shadow-dark">Welcome to Crucible</h1>
                 <div className=" flex flex-col h-1/2 w-1/3 mx-auto text-white bg-slate-200 rounded shadow-2xl dark:bg-color-contrast-dark overflow-auto">

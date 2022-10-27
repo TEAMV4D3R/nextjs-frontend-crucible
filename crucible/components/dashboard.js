@@ -3,8 +3,9 @@ import Head from "next/head";
 
 
 //add darkmode
-const UserHome = () => {
+const UserHome = ({ resources }) => {
 
+    console.log("dashboard", resources)
     return (
         <>
             <Head>
