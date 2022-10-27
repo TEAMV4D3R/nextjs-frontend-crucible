@@ -1,20 +1,31 @@
-import { Footer } from "./footer";
+import { Footer } from "../components/footer";
 import Image from 'next/image'
 import Head from "next/head";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import Link from "next/link"
 
-const AboutTheDevs = () => {
+const DevPage = () => {
     const imgs = [
         "/data/JaeHeadshot.jpg",
         "/data/JacobHeadshot.png",
         "/data/JJHeadshot.png",
         "/data/PedroHeadshot.jpg",
-    ]
+    ];
     return (
         <>
             <Head>
                 <title>About The Devs</title>
             </Head>
+            <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
+                <div className="flex justify-between items-center w-full">
+                    <h1 className="my-auto text-3xl m-5"><Link href="/">Crucible</Link></h1>
+                    <div>
+                        <h1 className="my-auto text-2xl m-5">
+                            <Link href="/devpage">About The Devs</Link>
+                        </h1>
+                    </div>
+                </div>
+            </header>
             <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark w-screen">
                 <h1 className="text-center">About The Devs</h1>
                 <div className="flex flex-row justify-evenly items-center h-5/6">
@@ -67,4 +78,4 @@ const AboutTheDevs = () => {
     )
 }
 
-export default AboutTheDevs
+export default DevPage
