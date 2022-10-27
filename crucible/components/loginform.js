@@ -37,7 +37,7 @@ const LoginForm = ({ onLogin, setUserAuth }) => {
                         <button className="mt-10 w-4/5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark
                                 px-10 py-3 ">Log In</button>
                         <div className="flex justify-center mt-10 mb-5">
-                            <h2 class="text-xl text-slate-700">New to Crucible?</h2>
+                            <h2 className="text-xl text-slate-700">New to Crucible?</h2>
                             <button className="mx-2 text-xl text-purple-700">Sign Up</button>
                         </div>
                     </form>

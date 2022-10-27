@@ -7,6 +7,20 @@ const AuthContext = createContext();
 
 export function useAuth() {
 
+
+    const [user, setUser] = useState(null);
+    const [token, setToken] = useState(null);
+    useEffect((item) => {
+        item = JSON.parse(localStorage.getItem('user')) || null;
+        console.log("item", item)
+        setUser(item)
+    }, []);
+
+    useEffect((item) => {
+        item = JSON.parse(localStorage.getItem('token')) || null;
+        setToken(item)
+    }, []);
+
     const auth = useContext(AuthContext);
     if (!auth) {
         throw new Error("You forgot to set up AuthProvider!");
@@ -17,21 +31,23 @@ export function useAuth() {
 
 export function AuthProvider(props) {
 
+
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(null);
-    useEffect(() => {
-        const item = JSON.parse(localStorage.getItem('user')) || null;
+    useEffect((item) => {
+        item = JSON.parse(localStorage.getItem('user')) || null;
+        console.log("item", item)
         setUser(item)
     }, []);
 
-    useEffect(() => {
-        const item = JSON.parse(localStorage.getItem('token')) || null;
+    useEffect((item) => {
+        item = JSON.parse(localStorage.getItem('token')) || null;
         setToken(item)
     }, []);
 
     const [state, setState] = useState({
-        tokens: token,
-        user: user,
+        tokens: null,
+        user: null,
         login,
         logout,
     });
@@ -43,31 +59,34 @@ export function AuthProvider(props) {
 
         console.log("check", loginUrl)
 
-        const response = await axios.post(loginUrl, { username, password });
+        await axios.post(loginUrl, { username, password })
+            .then((response) => {
+                console.log("response", response)
 
-        const decodedAccess = jwt.decode(response.data.access);
-        setToken(response.data)
-        let stringfyedValueToken = JSON.stringify(response.data)
-        localStorage.setItem('token', stringfyedValueToken);
-        const newUserAuth = {
-            username: decodedAccess.username,
-            email: decodedAccess.email,
-            id: decodedAccess.user_id,
-        }
-        setUser(newUserAuth)
-        let stringfyedValueUser = JSON.stringify(newUserAuth)
-        localStorage.setItem('user', stringfyedValueUser);
+                const decodedAccess = jwt.decode(response.data.access);
+                let stringfyedValueToken = JSON.stringify(response.data)
+                localStorage.setItem('token', stringfyedValueToken);
+                setToken(JSON.parse(localStorage.getItem('token')))
+                console.log("tokennssss", token)
 
-        const newState = {
-            tokens: response.data,
-            user: {
-                username: decodedAccess.username,
-                email: decodedAccess.email,
-                id: decodedAccess.user_id,
-            }
-        }
+                const newUserAuth = {
+                    username: decodedAccess.username,
+                    email: decodedAccess.email,
+                    id: decodedAccess.user_id,
+                }
+                let stringfyedValueUser = JSON.stringify(newUserAuth)
+                localStorage.setItem('user', stringfyedValueUser);
+                setUser(JSON.parse(localStorage.getItem('user')))
+                console.log("usersss", user)
 
-        setState(prevState => ({ ...prevState, ...newState }));
+                const newState = {
+                    tokens: response.data,
+                    user: newUserAuth
+                }
+                console.log(newState)
+
+                setState(prevState => ({ ...prevState, ...newState }));
+            });
     }
 
     function logout() {
