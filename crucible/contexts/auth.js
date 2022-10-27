@@ -46,6 +46,17 @@ export function AuthProvider(props) {
         const response = await axios.post(loginUrl, { username, password });
 
         const decodedAccess = jwt.decode(response.data.access);
+        setToken(response.data)
+        let stringfyedValueToken = JSON.stringify(response.data)
+        localStorage.setItem('token', stringfyedValueToken);
+        const newUserAuth = {
+            username: decodedAccess.username,
+            email: decodedAccess.email,
+            id: decodedAccess.user_id,
+        }
+        setUser(newUserAuth)
+        let stringfyedValueUser = JSON.stringify(newUserAuth)
+        localStorage.setItem('user', stringfyedValueUser);
 
         const newState = {
             tokens: response.data,
