@@ -2,6 +2,8 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 import Head from "next/head";
 
+
+//add darkmode
 const UserHome = () => {
 
     return (

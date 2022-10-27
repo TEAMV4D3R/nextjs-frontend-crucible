@@ -65,10 +65,16 @@ export default function useResource() {
     }
 
     async function updateResource(resource) {
-        deleteResource(resource)
-        createResource(resource)
+        try {
+            const url = `${apiUrl}${resource.id}/`;
+            const res = await axios.put(url,resource, config());
+            console.log("Ures:", res)
+            mutate(); // mutate causes complete collection to be refetched
+        } catch (err) {
+            console.log("error")
+            handleError(err);
+        }
     }
-
 
     // helper function to handle getting Authorization headers EXACTLY right
     function config() {

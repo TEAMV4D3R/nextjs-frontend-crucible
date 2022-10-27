@@ -1,11 +1,34 @@
 import { AiFillEdit } from "react-icons/ai";
+import { UpdateJobModal } from "./updatejobmodal";
+import { useState } from "react";
 
 const tdStyles = "my-10  mx-auto p-3 bg-violet-200 text-slate-900 dark:bg-neutral-700 dark:text-color-bright-dark"
 const thStyles = "my-10  mx-auto p-3 bg-color-shadow text-slate-900 dark:bg-neutral-900 dark:text-color-bright-dark"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
-export const MyJobsTable = (resources) => {
+export const MyJobsTable = ({resources, updateResource}) => {
+    const [modalIsOpen, setIsModalOpen] = useState(false)
+
     const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes", "", "", "", "Delete"]
+
+    const handleUpdate = (e) => {
+        e.preventDefault()
+        const data = {
+            position: e.target.pos.value,
+            location: e.target.loc.value,
+            description: e.target.desc.value,
+            employer: e.target.emp.value,
+            status: e.target.sts.value,
+            note_name: e.target.note.value,
+            owner: 1
+            // Need to update the owner
+            // Need to only display data that belongs to the owner
+        }
+        console.log("job stuff = ", data)
+        updateResource(data);
+
+    }
+
     return (
         <table className='z-0 w-4/5'>
             <thead>
@@ -19,11 +42,17 @@ export const MyJobsTable = (resources) => {
                         <tr key={idx} className={`${tdStyles}`}>
 
                             <td className='flex items-center content-center'>
-                                <button onClick={(() => {
+                                <button onClick={() => {
+                                    setIsModalOpen(true)
+                                }} className='hover:text-red-200 mx-auto my-3'>
+                                <AiFillEdit className="text-2xl" />Add New Job</button>
+
+                                <UpdateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleUpdate={handleUpdate} input={item} className="w-full z-40" />
+                                {/* <button onClick={(() => {
                                     resources.updateResource(item)
                                 })} className='hover:text-red-200 mx-auto my-3'>
                                     <AiFillEdit className="text-2xl" />
-                                </button>
+                                </button> */}
                             </td>
                             <td className="py-5 px-3">{item.position}</td>
                             <td className="py-5 px-3">{item.location}</td>
