@@ -4,24 +4,6 @@ import { useState, useEffect } from "react";
 import useResource from "../hooks/useResource";
 
 const UserHome = (props) => {
-
-    // const {resources} = useResource();
-
-    // const[userData, setUserData] = useState([]);
-
-    console.log("dashboard resources", props.resources)
-
-    // console.log("RESOURCES", resources)
-    // useEffect(() => {
-    //     const data = resources?resources.filter(element => {
-    //         console.log(element)
-    //         return props.user === element?.owner
-    //     }): [];
-    //     setUserData(data)
-    // }, []);
-
-    console.log("DATA", props.userData)
-
     const [userApplied, setUserApplied] = useState(0);
     const [userPending, setUserPending] = useState(0);
     const [userInterview, setUserInterview] = useState(0);
@@ -73,29 +55,34 @@ const UserHome = (props) => {
             </Head>
             <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
                 <div className="flex flex-row justify-center p-5">
-                    <div className="bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                    <div className="flex flex-row bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                        <h2 className="text-center">Applied</h2>
                         <div className="container">
-                            <p className="text-center">{userApplied} Applied</p>
+                            <p className="text-center">{userApplied}</p>
                         </div>
                     </div>
-                    <div className="bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                    <div className="flex flex-row bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                        <h2 className="text-center">Pending</h2>
                         <div className="container">
-                            <p className="text-center">{userPending} Pending</p>
+                            <h2 className="text-center">{userPending}</h2>
                         </div>
                     </div>
-                    <div className="bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                    <div className="flex flex-row bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                        <h2 className="text-center">Interview Scheduled</h2>
                         <div className="container">
-                            <p className="text-center">{userInterview} Interview Scheduled</p>
+                            <h2 className="text-center">{userInterview}</h2>
                         </div>
                     </div>
-                    <div className="bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                    <div className="flex flex-row bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                        <h2 className="text-center">Declined</h2>
                         <div className="container">
-                            <p className="text-center">{userDeclined} Declined</p>
+                            <h2 className="text-center">{userDeclined}</h2>
                         </div>
                     </div>
-                    <div className="bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                    <div className="flex flex-row bg-gray-500 mx-4 p-5 w-1/6 rounded">
+                        <h2 className="text-center">Accepted</h2>
                         <div className="container">
-                            <p className="text-center">{userAccepted} Accepted</p>
+                            <h2 className="text-center">{userAccepted}</h2>
                         </div>
                     </div>
                 </div>
