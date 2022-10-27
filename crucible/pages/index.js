@@ -3,10 +3,12 @@ import App from "../components/app";
 import LoginForm from "../components/loginform";
 import Header from "../components/header";
 import { useAuth } from "../contexts/auth";
+import { useState } from "react";
 
 export const Index = () => {
 
   const { user, login, tokens, logout } = useAuth();
+  const [userAuth, setUserAuth] = useState(user);
 
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
@@ -18,7 +20,7 @@ export const Index = () => {
     <>
       {user ?
         <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
-        <LoginForm onLogin={loginHandler} />}
+        <LoginForm onLogin={loginHandler} setUserAuth={setUserAuth} />}
     </>
   )
 }

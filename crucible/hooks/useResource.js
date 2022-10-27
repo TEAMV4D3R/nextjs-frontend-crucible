@@ -37,6 +37,7 @@ export default function useResource() {
     async function createResource(info) {
 
         try {
+            console.log("info", info)
             await axios.post(apiUrl, info, config());
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
@@ -65,7 +66,7 @@ export default function useResource() {
         try {
             console.log("id, resource:", id, resource)
             const url = `${apiUrl}${id}/`;
-            const res = await axios.put(url,resource, config());
+            const res = await axios.put(url, resource, config());
             console.log("Updated item:", res)
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {

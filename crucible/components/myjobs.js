@@ -3,7 +3,7 @@ import { CreateJobModal } from "../components/createjobmodal"
 import { useState } from 'react';
 import Head from "next/head";
 
-const MyJobs = ({ resources, createResource, updateResource, deleteResource }) => {
+const MyJobs = ({ resources, createResource, updateResource, deleteResource, user }) => {
 
     const [modalIsOpen, setIsModalOpen] = useState(false)
 
@@ -16,8 +16,9 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
             employer: e.target.emp.value,
             status: e.target.sts.value,
             note_name: e.target.note.value,
-            owner: 1
+            owner: user?.id
         }
+        setIsModalOpen(false)
         console.log("job stuff = ", data)
         createResource(data);
 
@@ -38,7 +39,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource }) =
                     <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleSubmit={handleSubmit} input={resources} className="w-full z-40" />
 
                     {resources &&
-                        <MyJobsTable input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-4/5" />
+                        <MyJobsTable user={user?.id} input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-4/5" />
                     }
 
                 </div>
