@@ -273,7 +273,7 @@ const UserHome = (props) => {
             setThirtyOne(thirtyone)
 
         }
-    }, []);
+    }, [props.resources, props.user]);
 
     console.log("ten", useTen)
 
