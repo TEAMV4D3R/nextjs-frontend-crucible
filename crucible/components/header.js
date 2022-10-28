@@ -5,8 +5,10 @@ import 'react-modern-drawer/dist/index.css';
 import { useState } from 'react';
 import useDarkMode from "../hooks/useDarkMode";
 import { Link } from "react-router-dom";
+import Image from "next/image"
 
 export const Header = ({ user, logout }) => {
+    const imgs = "/data/logo.png";
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
@@ -16,7 +18,7 @@ export const Header = ({ user, logout }) => {
     return (
         <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
             <div className="flex">
-                <h1 className="my-auto text-3xl m-5">Crucible</h1>
+                <h2 className="my-auto text-3xl m-10">CRUCIBLE</h2>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link to="/"><AiFillHome /></Link>

@@ -3,7 +3,7 @@ import { UpdateJobModal } from "./updatejobmodal";
 import { useState } from "react";
 
 const tdStyles = "my-10 mx-auto p-3 bg-violet-200 text-slate-900 dark:bg-neutral-700 dark:text-color-bright-dark"
-const thStyles = "my-10 mx-auto p-3 bg-color-shadow text-slate-900 dark:bg-neutral-900 dark:text-color-bright-dark"
+const thStyles = "my-10 mx-auto p-3 bg-color-shadow text-slate-900 dark:bg-color-shadow-dark dark:text-color-bright-dark"
 const totalStyles = "my-10  mx-auto p-3 text-center bg-emerald-700 text-white"
 
 export const MyJobsTable = (props) => {
@@ -39,8 +39,6 @@ export const MyJobsTable = (props) => {
             <tbody>
                 {props?.input &&
                     props?.input.map((item, idx) => {
-                        console.log("props.user", props.user)
-                        console.log("item", item)
                         if (props.user === item?.owner) {
                             return (
                                 <tr key={idx} className={`${tdStyles}`}>
@@ -63,7 +61,6 @@ export const MyJobsTable = (props) => {
                                     <td colSpan={4} className="py-5 px-3">{item.note_name}</td>
                                     <td className='flex items-center content-center'>
                                         <button onClick={(() => {
-                                            console.log(item.id)
                                             props.deleteStand(item)
                                         }
                                         )} className='hover:text-red-200 mx-auto my-3'>
