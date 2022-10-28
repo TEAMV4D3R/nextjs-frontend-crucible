@@ -27,9 +27,9 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                 <div className='flex content-center items-center  mx-20'>
                     <FaSearch className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 m-2'><Link to="/jobsearch">Job Search</Link></h6></div>
-                <div className='flex content-center items-center  mx-20'>
+                {/* <div className='flex content-center items-center  mx-20'>
                     <BsFillChatDotsFill className="mx-3 text-slate-900 " />
-                    <h6 className='text-slate-900 m-2'><Link to="/chatboard">Chat Board</Link></h6></div>
+                    <h6 className='text-slate-900 m-2'><Link to="/chatboard">Chat Board</Link></h6></div> */}
                 <div className='flex content-center items-center  mx-20'>
                     <BsPeopleFill className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 m-2'><Link to="/aboutthedevs">About The Devs</Link></h6>
