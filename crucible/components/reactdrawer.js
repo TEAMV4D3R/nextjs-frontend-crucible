@@ -19,11 +19,11 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                 <h2 className='text-2xl text-slate-900 text-center p-2'>Welcome {user?.username.split(' ').map(username => username[0].toUpperCase() + username.substring(1).toLowerCase())
                     .join(' ')}</h2>
                 <div className='flex content-center items-center mx-20'>
-                    <AiFillHome className="mx-3 text-slate-900 " />
-                    <h6 className='text-slate-900 mx-3'><Link to="/">Dashboard</Link></h6></div>
-                <div className='flex content-center items-center mx-20'>
                     <FaSuitcase className="mx-3 text-slate-900 " />
-                    <h6 className='text-slate-900 mx-3'><Link to="/myjobs">My Jobs</Link></h6></div>
+                    <h6 className='text-slate-900 mx-3'><Link to="/">My Jobs</Link></h6></div>
+                <div className='flex content-center items-center mx-20'>
+                    <AiFillHome className="mx-3 text-slate-900 " />
+                    <h6 className='text-slate-900 mx-3'><Link to="/dashboard">Dashboard</Link></h6></div>
                 <div className='flex content-center items-center  mx-20'>
                     <FaSearch className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 m-2'><Link to="/jobsearch">Job Search</Link></h6></div>
