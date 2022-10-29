@@ -32,7 +32,7 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                         <BsPeopleFill className="mx-3 text-3xl text-slate-900 " />
                         <h6 id="aboutthedevs" className='text-slate-900 text-2xl m-2'><Link to="/aboutthedevs">About The Devs</Link></h6>
                     </div>
-                    <div className="flex flex-row items-center bg-color-highlight dark:bg-color-highlight-dark  justify-center p-2 mx-auto w-1/3 rounded">
+                    <div className="flex flex-row items-center bg-color-highlight dark:bg-color-highlight-dark  justify-center p-2 mx-auto w-1/3 shadow-xl rounded">
                         <AiOutlineLogout className='text-2xl' />
                         <button id="logoutbutton" className="flex flex-col justify-center bg-color-highlight dark:bg-color-highlight-dark rounded mx-auto my-2 flex flex-col items-center w-5/6 shadow-3xl" onClick={() => logout()}>Logout
                         </button>

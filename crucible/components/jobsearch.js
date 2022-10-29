@@ -43,11 +43,11 @@ const JobSearch = () => {
                 <div className="flex flex-col item-start content-start bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                     <form onSubmit={submitHandler} id="jobsearchform" className="flex flex-col mt-20 mx-auto w-4/5 items-center text-color-bright-dark">
                         <div className="flex flex-row items-center w-full">
-                            <div className="flex items-center w-2/3 h-20 mr-5 bg-color-contrast dark:bg-color-contrast-dark rounded">
+                            <div className="flex items-center w-2/3 h-20 mr-5 bg-color-contrast dark:bg-color-contrast-dark shadow-xl rounded">
                                 <BsSearch className="mx-5 text-4xl" />
                                 <input placeholder="Dream Job" name="keyword" className="input w-4/5 py-5 h-20 mr-5 bg-color-contrast dark:bg-color-contrast-dark rounded" />
                             </div>
-                            <div className="flex items-center w-1/3 h-20 bg-color-contrast dark:bg-color-contrast-dark rounded">
+                            <div className="flex items-center w-1/3 h-20 bg-color-contrast dark:bg-color-contrast-dark shadow-xl rounded">
                                 <IoLocation className="mx-5 text-4xl" />
                                 <input name="location" placeholder="Job Location" className="input w-1/3 py-5 h-20 bg-color-contrast dark:bg-color-contrast-dark rounded" />
                             </div>
