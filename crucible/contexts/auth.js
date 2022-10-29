@@ -23,14 +23,6 @@ export function AuthProvider(props) {
         logout,
     });
 
-    useEffect(() => {
-        const { token } = localStorage.getItem("token");
-
-        if (token) {
-            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-        }
-    }, [])
-
     async function login(username, password) {
 
         const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
