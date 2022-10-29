@@ -81,9 +81,9 @@ const ChatBoard = (props) => {
             <Head>
                 <title>Crucible Home</title>
             </Head>
-            <main className="flex flex-col justify-evenly bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
+            <main className="flex flex-col justify-start bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                 <h1 className="mx-auto">Chat Board</h1>
-                <div className="flex flex-col mx-auto w-3/5 bg-violet-200 rounded h-4/6 dark:bg-color-shadow-dark dark:text-color-bright-dark">
+                <div className="flex flex-col mx-auto w-3/5 mt-5 bg-violet-200 rounded h-4/6 dark:bg-color-shadow-dark dark:text-color-bright-dark">
                     <div className="m-5 bg-violet-100 rounded h-4/5 overflow-scroll dark:bg-neutral-600" id="chatDiv">
                         {message.map((el, idx) => {
                             console.log(el)
