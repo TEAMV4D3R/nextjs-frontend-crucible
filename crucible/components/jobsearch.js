@@ -47,6 +47,7 @@ const JobSearch = () => {
 
     return (
         <>
+        <div data-testid="jobsearch-1">
             <div className="flex flex-col item-start content-start bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                 <form onSubmit={submitHandler} className="flex flex-col mt-20 mx-auto w-4/5 items-center text-color-bright-dark">
                     <div className="flex flex-row items-center w-full">
@@ -85,6 +86,7 @@ const JobSearch = () => {
                     })
                     }
                 </div>
+            </div>
             </div>
         </>
     )
