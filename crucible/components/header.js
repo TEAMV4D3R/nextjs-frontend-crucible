@@ -16,7 +16,7 @@ export const Header = ({ user, logout }) => {
     const [colorTheme, setTheme] = useDarkMode();
 
     return (
-        <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
+        <header data-testid="header-1" className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
             <div className="flex">
                 <h2 className="my-auto text-3xl m-10">CRUCIBLE</h2>
             </div>

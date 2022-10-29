@@ -15,6 +15,8 @@ const CrucibleAdmin = ({ user, onLogin, tokens }) => {
     const [userData, setUserData] = useState([]);
 
     return (
+        <div data-testid="crucibleadmin-1">
+
         <Routes>
             <Route path='/' element={<MyJobs user={user} onLogin={onLogin} resources={resources} createResource={createResource} deleteResource={deleteResource} updateResource={updateResource} />}></Route>
             <Route path='/dashboard' element={<DashBoard user={user?.id} userData={userData} resources={resources} onLogin={onLogin} />}></Route>
@@ -22,6 +24,7 @@ const CrucibleAdmin = ({ user, onLogin, tokens }) => {
             <Route path='/chatboard' element={<ChatBoard user={user} />}></Route>
             <Route path='/aboutthedevs' element={<AboutTheDevs user={user} onLogin={onLogin} />}></Route>
         </Routes>
+        </div>
     )
 }
 

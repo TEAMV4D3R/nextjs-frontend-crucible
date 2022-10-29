@@ -276,6 +276,8 @@ const UserHome = (props) => {
 
     return (
         <>
+        <div data-testid="dashboard-1">
+
             <Head>
                 <title>Crucible Home</title>
             </Head>
@@ -353,6 +355,7 @@ const UserHome = (props) => {
                     <DoughnutChart useFullTime={useFullTime} usePartTime={usePartTime} useIntern={useIntern} useContract={useContract} />
                 </div>
             </main>
+            </div>
         </>
     )
 }

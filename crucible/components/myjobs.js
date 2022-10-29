@@ -25,6 +25,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
 
     return (
         <>
+        <div data-testid="myjobs-1">
             <Head>
                 <title>My Jobs</title>
             </Head>
@@ -44,6 +45,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
 
                 </div>
             </main>
+            </div>
         </>
 
     )

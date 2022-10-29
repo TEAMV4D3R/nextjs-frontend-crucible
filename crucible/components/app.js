@@ -6,6 +6,7 @@ import CrucibleAdmin from '../components/crucibleadmin';
 const App = ({ user, logout, onLogin, tokens }) => {
 
     return (
+        <div data-testid="app-1">
         <Router>
             <Header
                 user={user}
@@ -17,6 +18,7 @@ const App = ({ user, logout, onLogin, tokens }) => {
                 tokens={tokens}
             />
         </Router>
+        </div>
     )
 }
 

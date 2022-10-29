@@ -18,9 +18,11 @@ export const Index = () => {
 
   return (
     <>
-      {user ?
-        <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
-        <LoginForm onLogin={loginHandler} setUserAuth={setUserAuth} />}
+      <div data-testid="index-page-1">
+        {user ?
+          <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
+          <LoginForm onLogin={loginHandler} setUserAuth={setUserAuth} />}
+      </div>
     </>
   )
 }

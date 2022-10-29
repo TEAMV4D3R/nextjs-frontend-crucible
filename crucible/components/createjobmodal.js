@@ -17,6 +17,7 @@ export const CreateJobModal = (props) => {
 
     return (
         <>
+         <div data-testid="createjobmodal-1">
             <Modal
                 isOpen={props.modalIsOpen}
                 style={customStyles}
@@ -68,6 +69,7 @@ export const CreateJobModal = (props) => {
                     </div>
                 </form>
             </Modal>
+            </div>
         </>
     )
 }

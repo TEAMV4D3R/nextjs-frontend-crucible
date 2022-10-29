@@ -80,7 +80,9 @@ export const BarChart = (props) => {
 
 
     return (
-        <div className="flex items-center content-center bg-violet-200 dark:bg-neutral-100 text-slate-50 rounded drop-shadow-md mt-10 w-3/5 mx-auto m-4 p-5 ">
+
+        <div data-testid="barchart-1" className="flex items-center content-center bg-violet-200 dark:bg-neutral-100 text-slate-50 rounded drop-shadow-md mt-10 w-3/5 mx-auto m-4 p-5 ">
+
             <Bar options={options} data={data} className="m-5" />;
         </div>
 

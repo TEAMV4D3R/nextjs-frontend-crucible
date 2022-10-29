@@ -73,8 +73,10 @@ const ChatBoard = (props) => {
 
     return (
         <>
+
+          <div data-testid="chatboard-1">
             <Head>
-                <title>Crucible Home</title>
+                <title>Chat Board</title>
             </Head>
             <main className="flex flex-col justify-start bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen">
                 <h1 className="mx-auto">Chat Board</h1>
@@ -110,6 +112,7 @@ const ChatBoard = (props) => {
                     </form>
                 </div>
             </main>
+            </div>
         </>
     )
 }

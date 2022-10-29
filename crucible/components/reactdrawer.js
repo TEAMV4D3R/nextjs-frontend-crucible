@@ -6,6 +6,7 @@ import { BsFillChatDotsFill, BsPeopleFill, BsPersonCircle } from "react-icons/bs
 
 export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
     return (
+        <div data-testid="reactdrawer-1">
         <Drawer
             open={isOpen}
             onClose={toggleDrawer}
@@ -38,5 +39,6 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                 </div>
             </div>
         </Drawer>
+        </div>
     )
 }
