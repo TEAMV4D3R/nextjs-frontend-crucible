@@ -11,7 +11,7 @@ export const MyJobsTable = (props) => {
 
     const [id, setid] = useState(false)
 
-    const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes", "", "", "", "Delete"]
+    const trackingjobs = ["Edit", "Position", "Location", "Description", "Employer", "Status", "Notes", "", "", "Created", "Delete"]
 
     const handleUpdate = (e) => {
         e.preventDefault()
@@ -29,6 +29,27 @@ export const MyJobsTable = (props) => {
         props.updateResource(data, id);
     }
 
+    const formatDate = (date) => {
+        const MONTHS = {
+            "1": "Jan",
+            "2": "Feb",
+            "3": "Mar",
+            "4": "Apr",
+            "5": "May",
+            "6": "Jun",
+            "7": "July",
+            "8": "Aug",
+            "9": "Sep",
+            "10": "Oct",
+            "11": "Nov",
+            "12": "Dec",
+        }
+        const tempDate = date.split("-")
+        const month = MONTHS[tempDate[1]]
+        const day = tempDate[2].slice(0, 2)
+        return `${month} ${day}, ${tempDate[0]}`
+    }
+
     return (
         <table className='z-0 w-4/5'>
             <thead>
@@ -42,23 +63,21 @@ export const MyJobsTable = (props) => {
                         if (props.user === item?.owner) {
                             return (
                                 <tr key={idx} className={`${tdStyles}`}>
-
                                     <td className='flex items-center content-center'>
                                         <button onClick={() => {
                                             setIsModalOpen(true)
                                             setid(item.id)
                                         }} className='hover:text-red-200 mx-auto my-3'>
                                             <AiFillEdit className="text-2xl" /></button>
-
                                         <UpdateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleUpdate={handleUpdate} input={item} className="w-full z-40" />
-
                                     </td>
                                     <td className="py-5 px-3">{item.position}</td>
                                     <td className="py-5 px-3">{item.location}</td>
                                     <td className="py-5 px-3">{item.description}</td>
                                     <td className="py-5 px-3">{item.employer}</td>
                                     <td className="py-5 px-3">{item.status}</td>
-                                    <td colSpan={4} className="py-5 px-3">{item.note_name}</td>
+                                    <td colSpan={3} className="py-5 px-3">{item.note_name}</td>
+                                    <td className="py-5 px-3">{formatDate(item.created)}</td>
                                     <td className='flex items-center content-center'>
                                         <button onClick={(() => {
                                             props.deleteStand(item)

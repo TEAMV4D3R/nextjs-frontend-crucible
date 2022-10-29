@@ -11,7 +11,6 @@ export function useAuth() {
     if (!auth) {
         throw new Error("You forgot to set up AuthProvider!");
     }
-    console.log("auth", auth)
     return auth;
 }
 
@@ -27,8 +26,6 @@ export function AuthProvider(props) {
     async function login(username, password) {
 
         const loginUrl = process.env.NEXT_PUBLIC_API_URL_TOKEN;
-
-        // console.log("check", loginUrl)
 
         const response = await axios.post(loginUrl, { username, password });
 
