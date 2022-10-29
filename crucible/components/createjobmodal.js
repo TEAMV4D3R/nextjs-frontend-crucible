@@ -15,7 +15,6 @@ export const CreateJobModal = (props) => {
         }
     };
 
-    // const handleClick
 
     return (
         <>
@@ -23,9 +22,7 @@ export const CreateJobModal = (props) => {
             <Modal
                 isOpen={props.modalIsOpen}
                 style={customStyles}
-                ariaHideApp={false}
-
-            >
+                ariaHideApp={false}>
                 <form onSubmit={props.handleSubmit} className='flex flex-col items-center bg-color-shadow dark:bg-color-shadow-dark w-full rounded z-0'>
                     <h1 className="flex flex-col mx-auto items-center">Add a Job to Track!</h1>
 
@@ -52,7 +49,7 @@ export const CreateJobModal = (props) => {
                             <select name="sts" className='bg-sky-100 w-5/6 m-2 rounded' required id="selectList">
                                 <option value="Applied">Applied</option>
                                 <option value="Pending">Pending</option>
-                                {/* <option value="Ghosted">Ghosted</option> */}
+
                                 <option value="Interview Scheduled">Interview Scheduled</option>
                                 <option value="Declined Offer">Declined Offer</option>
                                 <option value="Accepted Offer">Accepted Offer</option>

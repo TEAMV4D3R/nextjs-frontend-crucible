@@ -9,7 +9,6 @@ const NewUser = ({ onCreate }) => {
             password: event.target.password.value,
             email: event.target.email.value,
         };
-
         onCreate(createUser);
     }
 

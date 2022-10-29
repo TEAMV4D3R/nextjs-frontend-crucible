@@ -33,15 +33,10 @@ const JobSearch = () => {
     }
 
     const findJobs = (keyword, location) => {
-        console.log("logging: ", keyword, ",", location)
         const tempSearchResult = jobs.filter(arr => {
-            console.log("arr position: ", arr.position.toLowerCase())
-            console.log(keyword)
             return arr.position.toLowerCase().includes(keyword.toLowerCase()) && arr.location.toLowerCase().includes(location.toLowerCase())
         })
-        console.log("temp:", tempSearchResult)
         setSearchResult(tempSearchResult)
-        console.log("filtered: ", searchResult)
     }
 
 

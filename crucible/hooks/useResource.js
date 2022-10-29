@@ -37,7 +37,6 @@ export default function useResource() {
     async function createResource(info) {
 
         try {
-            console.log("info", info)
             await axios.post(apiUrl, info, config());
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
@@ -51,8 +50,6 @@ export default function useResource() {
 
         try {
             const url = `${apiUrl}${info.id}/`;
-            console.log("delete")
-            console.log("config", JSON.stringify(config()));
             const res = await axios.delete(url, config());
             // console.log("res", res)
             mutate(); // mutate causes complete collection to be refetched
@@ -64,13 +61,11 @@ export default function useResource() {
 
     async function updateResource(resource, id) {
         try {
-            console.log("id, resource:", id, resource)
             const url = `${apiUrl}${id}/`;
             const res = await axios.put(url, resource, config());
             // console.log("Updated item:", res)
             mutate(); // mutate causes complete collection to be refetched
         } catch (err) {
-            console.log("error")
             handleError(err);
         }
     }
