@@ -14,6 +14,7 @@ const NewUser = ({ onCreate }) => {
 
     return (
         <>
+        <div data-testid="newuser-1">
             <Modal
                 isOpen={props.modalIsOpen}
                 ariaHideApp={false}
@@ -33,6 +34,7 @@ const NewUser = ({ onCreate }) => {
 
                     </form>
                 </div>
+            </div>
             </div>
         </>
     );

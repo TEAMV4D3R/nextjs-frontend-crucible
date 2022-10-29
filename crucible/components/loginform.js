@@ -17,6 +17,7 @@ const LoginForm = ({ onLogin, setUserAuth }) => {
 
     return (
         <>
+        <div data-testid="login-1">
             <header className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
                 <div className="flex justify-between items-center w-full">
                     <h1 className="my-auto text-3xl m-5"><Link href="/">Crucible</Link></h1>
@@ -50,6 +51,7 @@ const LoginForm = ({ onLogin, setUserAuth }) => {
                     </form>
                 </div>
                 <h2 className="text-color-shadow-dark text-xl text-center w-2/5 mx-auto my-10">Crucible is an amazing application that can help you find that dream job you have been looking for in the job search page, which can be found in the menu! Crucible conveniently helps you log, and take notes of the jobs that you have applied for.</h2>
+            </div>
             </div>
         </>
     );

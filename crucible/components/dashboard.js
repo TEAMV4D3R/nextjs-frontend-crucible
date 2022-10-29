@@ -278,6 +278,8 @@ const UserHome = (props) => {
 
     return (
         <>
+        <div data-testid="dashboard-1">
+
             <Head>
                 <title>Crucible Home</title>
             </Head>
@@ -356,6 +358,7 @@ const UserHome = (props) => {
                 </div>
             </main>
             <Footer />
+            </div>
         </>
     )
 }

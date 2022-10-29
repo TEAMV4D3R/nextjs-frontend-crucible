@@ -8,6 +8,7 @@ import { IoLocation } from "react-icons/io5";
 
 export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
     return (
+        <div data-testid="reactdrawer-1">
         <Drawer
             open={isOpen}
             onClose={toggleDrawer}
@@ -36,5 +37,6 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                 <button className="bg-color-highlight dark:bg-color-highlight-dark rounded py-3 mx-auto flex flex-col items-center w-1/3 shadow-3xl" onClick={() => logout()}>Logout</button>
             </div>
         </Drawer>
+        </div>
     )
 }

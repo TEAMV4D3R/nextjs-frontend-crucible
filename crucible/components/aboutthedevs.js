@@ -12,6 +12,7 @@ const AboutTheDevs = () => {
     ]
     return (
         <>
+        <div data-testid="aboutthedevs-1">
             <Head>
                 <title>About The Devs</title>
             </Head>
@@ -63,6 +64,7 @@ const AboutTheDevs = () => {
                 </div>
             </main>
             <Footer />
+            </div>
         </>
     )
 }

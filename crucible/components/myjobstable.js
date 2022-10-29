@@ -51,6 +51,7 @@ export const MyJobsTable = (props) => {
     }
 
     return (
+        <div data-testid="myjobstable-1">
         <table className='z-0 w-4/5'>
             <thead>
                 <tr>
@@ -97,5 +98,6 @@ export const MyJobsTable = (props) => {
 
             </tfoot>
         </table >
+        </div>
     )
 }
