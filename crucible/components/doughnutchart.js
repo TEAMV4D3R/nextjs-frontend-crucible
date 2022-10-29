@@ -46,12 +46,10 @@ const DoughnutChart = (props) => {
         },
     };
     return (
-        <div data-testid="doughnutchart-1">
-        <div className='w-2/5 p-5'>
+        <div className='w-2/5 p-5' data-testid="doughnutchart-1">
             <Doughnut data={data} options={options} />
         </div>
-        </div>
-        )
+    )
 }
 
 export default DoughnutChart

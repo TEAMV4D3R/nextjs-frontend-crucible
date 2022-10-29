@@ -72,9 +72,7 @@ const ChatBoard = (props) => {
     }
 
     return (
-        <>
-
-          <div data-testid="chatboard-1">
+        <div className="w-screen" data-testid="chatboard-1">
             <Head>
                 <title>Chat Board</title>
             </Head>
@@ -112,8 +110,7 @@ const ChatBoard = (props) => {
                     </form>
                 </div>
             </main>
-            </div>
-        </>
+        </div>
     )
 }
 

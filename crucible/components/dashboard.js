@@ -275,9 +275,7 @@ const UserHome = (props) => {
     }, [props.resources, props.user]);
 
     return (
-        <>
-        <div data-testid="dashboard-1">
-
+        <div className="w-screen bg-red-100" data-testid="dashboard-1">
             <Head>
                 <title>Crucible Home</title>
             </Head>
@@ -355,8 +353,7 @@ const UserHome = (props) => {
                     <DoughnutChart useFullTime={useFullTime} usePartTime={usePartTime} useIntern={useIntern} useContract={useContract} />
                 </div>
             </main>
-            </div>
-        </>
+        </div>
     )
 }
 

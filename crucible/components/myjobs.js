@@ -25,26 +25,26 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
 
     return (
         <>
-        <div data-testid="myjobs-1">
-            <Head>
-                <title>My Jobs</title>
-            </Head>
-            <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
-                <div className="flex flex-col items-center content-center" >
+            <div data-testid="myjobs-1">
+                <Head>
+                    <title>My Jobs</title>
+                </Head>
+                <main className="dark:bg-color-main-dark dark:text-color-bright-dark h-screen ">
+                    <div className="flex flex-col items-center content-center w-full" >
 
-                    <button className="flex items-center content-center justify-center m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5 w-4/5" onClick={() => {
-                        setIsModalOpen(true)
-                    }}><MdOutlineAddCircle className="mx-3 text-2xl" />
-                        <h2>Add New Job</h2></button>
+                        <button className="flex items-center content-center justify-center m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 py-5 w-4/5" onClick={() => {
+                            setIsModalOpen(true)
+                        }}><MdOutlineAddCircle className="mx-3 text-2xl" />
+                            <h2>Add New Job</h2></button>
 
-                    <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleSubmit={handleSubmit} input={resources} className="w-full z-40" />
+                        <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleSubmit={handleSubmit} input={resources} className="w-full z-40" />
 
-                    {resources &&
-                        <MyJobsTable user={user?.id} input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-4/5" />
-                    }
+                        {resources &&
+                            <MyJobsTable user={user?.id} input={resources} deleteStand={deleteResource} updateResource={updateResource} className="w-full" />
+                        }
 
-                </div>
-            </main>
+                    </div>
+                </main>
             </div>
         </>
 
