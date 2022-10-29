@@ -276,8 +276,6 @@ const UserHome = (props) => {
         }
     }, [props.resources, props.user]);
 
-    console.log("ten", useTen)
-
     return (
         <>
             <Head>

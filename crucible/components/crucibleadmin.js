@@ -14,8 +14,6 @@ const CrucibleAdmin = ({ user, onLogin, tokens }) => {
 
     const [userData, setUserData] = useState([]);
 
-    console.log("RESOURCES", resources)
-
 
     return (
         <Routes>

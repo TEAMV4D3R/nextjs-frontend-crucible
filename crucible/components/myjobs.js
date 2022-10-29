@@ -19,7 +19,6 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
             owner: user?.id
         }
         setIsModalOpen(false)
-        console.log("job stuff = ", data)
         createResource(data);
 
     }

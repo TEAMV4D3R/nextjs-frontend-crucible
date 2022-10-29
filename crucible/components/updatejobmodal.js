@@ -20,9 +20,7 @@ export const UpdateJobModal = (props) => {
             <Modal
                 isOpen={props.modalIsOpen}
                 style={customStyles}
-                ariaHideApp={false}
-
-            >
+                ariaHideApp={false}>
                 <form onSubmit={props.handleUpdate} className='flex flex-col items-center bg-color-shadow dark:bg-color-shadow-dark w-full rounded z-0'>
                     <h1 className="flex flex-col mx-auto items-center">Update Your Job</h1>
 
@@ -50,7 +48,6 @@ export const UpdateJobModal = (props) => {
                             <select name="sts" defaultValue={props.input.status} key={props.input.status} className='bg-sky-100 w-5/6 m-2 rounded' required id="selectList">
                                 <option value="Applied">Applied</option>
                                 <option value="Pending">Pending</option>
-                                {/* <option value="Ghosted">Ghosted</option> */}
                                 <option value="Interview Scheduled">Interview Scheduled</option>
                                 <option value="Declined Offer">Declined Offer</option>
                                 <option value="Accepted Offer">Accepted Offer</option>

@@ -75,13 +75,14 @@ export const BarChart = (props) => {
                     props.useThirtyOne,
                 ],
                 backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                textColor: 'rgba(255, 132, 0.5)'
             },
         ],
     };
 
 
     return (
-        <div className="flex items-center content-center bg-violet-200 dark:bg-neutral-400 text-slate-50 rounded drop-shadow-md mt-10 w-3/5 mx-auto m-4 p-5 ">
+        <div className="flex items-center content-center bg-violet-200 dark:bg-neutral-100 text-slate-50 rounded drop-shadow-md mt-10 w-3/5 mx-auto m-4 p-5 ">
             <Bar options={options} data={data} className="m-5" />;
         </div>
 

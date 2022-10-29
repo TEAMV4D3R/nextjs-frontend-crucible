@@ -34,5 +34,6 @@ h1 {
 } */
 
 .input:focus {
-  outline: none
+  outline: none;
+  color: #bb3365;
 }

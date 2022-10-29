@@ -102,7 +102,7 @@ const ChatBoard = (props) => {
                     </div>
                     <form onSubmit={handleSubmit} className="flex mx-5 w-ful justify-between">
                         <textarea className="w-4/5 rounded" name="message" />
-                        <button className="w-1/6 rounded bg-red-500">Send</button>
+                        <button className="w-1/6 rounded bg-color-highlight dark:bg-color-highlight-dark">Send</button>
                     </form>
                 </div>
             </main>

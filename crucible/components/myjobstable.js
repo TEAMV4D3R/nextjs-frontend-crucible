@@ -63,16 +63,13 @@ export const MyJobsTable = (props) => {
                         if (props.user === item?.owner) {
                             return (
                                 <tr key={idx} className={`${tdStyles}`}>
-
                                     <td className='flex items-center content-center'>
                                         <button onClick={() => {
                                             setIsModalOpen(true)
                                             setid(item.id)
                                         }} className='hover:text-red-200 mx-auto my-3'>
                                             <AiFillEdit className="text-2xl" /></button>
-
                                         <UpdateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleUpdate={handleUpdate} input={item} className="w-full z-40" />
-
                                     </td>
                                     <td className="py-5 px-3">{item.position}</td>
                                     <td className="py-5 px-3">{item.location}</td>
