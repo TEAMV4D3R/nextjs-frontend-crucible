@@ -1,6 +1,6 @@
 import Drawer from 'react-modern-drawer';
 import { Link } from "react-router-dom";
-import { AiFillHome } from "react-icons/ai";
+import { AiFillHome, AiFillDashboard } from "react-icons/ai";
 import { FaSuitcase, FaSearch } from "react-icons/fa";
 import { BsFillChatDotsFill, BsPeopleFill, BsPersonCircle } from "react-icons/bs";
 import { IoLocation } from "react-icons/io5";
@@ -22,7 +22,7 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                     <FaSuitcase className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 mx-3'><Link to="/">My Jobs</Link></h6></div>
                 <div className='flex content-center items-center mx-20'>
-                    <AiFillHome className="mx-3 text-slate-900 " />
+                    <AiFillDashboard className="mx-3 text-slate-900 " />
                     <h6 className='text-slate-900 mx-3'><Link to="/dashboard">Dashboard</Link></h6></div>
                 <div className='flex content-center items-center  mx-20'>
                     <FaSearch className="mx-3 text-slate-900 " />

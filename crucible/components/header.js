@@ -21,7 +21,7 @@ export const Header = ({ user, logout }) => {
                 <h2 className="my-auto text-3xl m-10">CRUCIBLE</h2>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
-                <Link to="/"><AiFillHome /></Link>
+                <Link to="/"><AiFillHome className="text-3xl" /></Link>
 
 
 
@@ -29,7 +29,7 @@ export const Header = ({ user, logout }) => {
                     <svg
                         onClick={() => setTheme("light")}
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="h-6 w-6 text-2xl"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="black"
@@ -45,7 +45,7 @@ export const Header = ({ user, logout }) => {
                     <svg
                         onClick={() => setTheme("dark")}
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6"
+                        className="h-6 w-6 text-2xl"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="black"
@@ -58,7 +58,7 @@ export const Header = ({ user, logout }) => {
                         />
                     </svg>
                 )}
-                <AiOutlineMenu onClick={toggleDrawer} />
+                <AiOutlineMenu onClick={toggleDrawer} className="text-3xl" />
                 <ReactDrawer
                     isOpen={isOpen}
                     toggleDrawer={toggleDrawer}
