@@ -3,10 +3,9 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 
 
-describe("Login Component Test", () => {
-    it("Component Loads"), () => {
+test("Login Component Test", () => {
         render(<LoginForm/>);
         const loginPage = screen.getByTestId("login-1");
         expect(loginPage).toBeInTheDocument();
-    }
+    
 })
