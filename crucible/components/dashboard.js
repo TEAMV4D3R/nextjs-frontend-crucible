@@ -7,8 +7,6 @@ import { FaHandshakeAltSlash, FaHandshake } from "react-icons/fa";
 import { BarChart } from '../components/barchart';
 import DoughnutChart from '../components/doughnutchart';
 
-
-
 const UserHome = (props) => {
     const [userApplied, setUserApplied] = useState(0);
     const [userPending, setUserPending] = useState(0);
@@ -357,7 +355,6 @@ const UserHome = (props) => {
                     <DoughnutChart useFullTime={useFullTime} usePartTime={usePartTime} useIntern={useIntern} useContract={useContract} />
                 </div>
             </main>
-            <Footer />
             </div>
         </>
     )

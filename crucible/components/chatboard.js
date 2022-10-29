@@ -2,6 +2,7 @@ import { Footer } from "../components/footer";
 import Head from "next/head";
 import { useState } from "react";
 import { useEffect } from "react";
+import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
 
 
@@ -18,7 +19,6 @@ const ChatBoard = (props) => {
         },
     };
 
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             axios.get(url)
@@ -30,13 +30,10 @@ const ChatBoard = (props) => {
         return () => clearInterval(intervalId);
     }, [url]);
 
-
     useEffect(() => {
         const objDiv = document.getElementById('chatDiv');
         objDiv.scrollTop = objDiv.scrollHeight
     })
-
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -51,7 +48,6 @@ const ChatBoard = (props) => {
             .then((res) => console.log("sucess: post"))
             .catch((err) => console.log("error: post "))
     }
-
 
     const formatDate = (date) => {
         const MONTHS = {
@@ -91,9 +87,14 @@ const ChatBoard = (props) => {
                             return (
                                 <div className="flex flex-col" key={idx}>
                                     <div className="flex items-center">
-                                        <div className="m-2 bg-violet-200 dark:bg-neutral-800 rounded-full">
-                                            <h2 className="m-2  rounded-full text-xl">{el.name[0].toUpperCase()}</h2>
-                                        </div>
+                                        {user == el.name ?
+                                            <div className="p-2 m-3 bg-violet-200 dark:bg-neutral-800 rounded-full">
+                                                <h2 className="rounded-full text-xl">{el.name[0].toUpperCase()}</h2>
+                                            </div> :
+                                            <div className="p-2 m-3 bg-blue-200 dark:bg-neutral-800 rounded-full">
+                                                <h2 className="rounded-full text-xl">{el.name[0].toUpperCase()}</h2>
+                                            </div>
+                                        }
                                         <h2 className="m-2 text-xl">{el.message}</h2>
                                     </div>
                                     <h2 className="m-2">{formatDate(el.created)}</h2>
@@ -104,13 +105,14 @@ const ChatBoard = (props) => {
                     </div>
                     <form onSubmit={handleSubmit} className="flex mx-5 w-ful justify-between">
                         <textarea className="w-4/5 rounded" name="message" />
-                        <button className="w-1/6 rounded bg-color-highlight dark:bg-color-highlight-dark">Send</button>
+                        <button className="flex justify-center items-center content-center w-1/6 rounded bg-color-highlight dark:bg-color-highlight-dark">
+                            <IoIosSend className="text-2xl mr-3" />
+                            <h2 className="text-xl">Send</h2>
+                        </button>
                     </form>
                 </div>
             </main>
-            <Footer />
             </div>
-
         </>
     )
 }

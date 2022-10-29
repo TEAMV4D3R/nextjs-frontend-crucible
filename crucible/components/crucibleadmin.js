@@ -14,7 +14,6 @@ const CrucibleAdmin = ({ user, onLogin, tokens }) => {
 
     const [userData, setUserData] = useState([]);
 
-
     return (
         <div data-testid="crucibleadmin-1">
 

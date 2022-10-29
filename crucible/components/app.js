@@ -17,7 +17,6 @@ const App = ({ user, logout, onLogin, tokens }) => {
                 onLogin={onLogin}
                 tokens={tokens}
             />
-            <Footer />
         </Router>
         </div>
     )

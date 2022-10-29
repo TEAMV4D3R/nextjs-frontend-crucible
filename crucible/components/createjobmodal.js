@@ -15,7 +15,6 @@ export const CreateJobModal = (props) => {
         }
     };
 
-
     return (
         <>
          <div data-testid="createjobmodal-1">

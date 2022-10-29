@@ -1,10 +1,8 @@
 import Drawer from 'react-modern-drawer';
 import { Link } from "react-router-dom";
-import { AiFillHome, AiFillDashboard } from "react-icons/ai";
+import { AiOutlineLogout, AiFillDashboard } from "react-icons/ai";
 import { FaSuitcase, FaSearch } from "react-icons/fa";
 import { BsFillChatDotsFill, BsPeopleFill, BsPersonCircle } from "react-icons/bs";
-import { IoLocation } from "react-icons/io5";
-
 
 export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
     return (
@@ -34,7 +32,11 @@ export const ReactDrawer = ({ user, isOpen, toggleDrawer, logout }) => {
                     <BsPeopleFill className="mx-3 text-3xl text-slate-900 " />
                     <h6 className='text-slate-900 text-2xl m-2'><Link to="/aboutthedevs">About The Devs</Link></h6>
                 </div>
-                <button className="bg-color-highlight dark:bg-color-highlight-dark rounded py-3 mx-auto flex flex-col items-center w-1/3 shadow-3xl" onClick={() => logout()}>Logout</button>
+                <div className="flex flex-row bg-color-highlight dark:bg-color-highlight-dark  justify-center p-2 mx-auto w-1/3 rounded">
+                    <AiOutlineLogout className='text-2xl' />
+                    <button className="flex flex-col justify-center bg-color-highlight dark:bg-color-highlight-dark rounded mx-auto flex flex-col items-center w-5/6 shadow-3xl" onClick={() => logout()}>Logout
+                    </button>
+                </div>
             </div>
         </Drawer>
         </div>

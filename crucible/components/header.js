@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Image from "next/image"
 
 export const Header = ({ user, logout }) => {
-    const imgs = "/data/logo.png";
+
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
         setIsOpen((prevState) => !prevState)
@@ -22,8 +22,6 @@ export const Header = ({ user, logout }) => {
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link to="/"><AiFillHome className="text-3xl" /></Link>
-
-
 
                 {colorTheme === "light" ? (
                     <svg
