@@ -9,14 +9,6 @@ export const Index = () => {
 
   const { user, login, tokens, logout } = useAuth();
 
-  useEffect(() => {
-    const { token } = localStorage.getItem("token");
-
-    if (token) {
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    }
-  }, [])
-
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
   }
