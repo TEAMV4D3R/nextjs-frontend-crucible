@@ -71,7 +71,6 @@ export const UpdateJobModal = (props) => {
                     </form>
                 </Modal>
             </div>
-            </div>
         </>
     )
 }
