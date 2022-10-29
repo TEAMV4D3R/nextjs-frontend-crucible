@@ -4,12 +4,14 @@ import Head from "next/head";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 
 const AboutTheDevs = () => {
+
     const imgs = [
         "/data/JaeHeadshot.jpg",
         "/data/JacobHeadshot.png",
         "/data/JJHeadshot.png",
         "/data/PedroHeadshot.jpg",
     ]
+
     return (
         <>
             <Head>

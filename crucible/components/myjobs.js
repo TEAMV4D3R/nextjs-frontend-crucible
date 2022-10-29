@@ -21,7 +21,6 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
         }
         setIsModalOpen(false)
         createResource(data);
-
     }
 
     return (

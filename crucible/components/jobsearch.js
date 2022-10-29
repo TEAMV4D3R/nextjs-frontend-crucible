@@ -21,8 +21,6 @@ const JobSearch = () => {
             .catch(error => console.log("ERRORRRRRR = ", error.message));
     }, []);
 
-
-    // will need access to scraper to find info
     function submitHandler(event) {
         event.preventDefault();
         const newSearch = {
@@ -38,7 +36,6 @@ const JobSearch = () => {
         })
         setSearchResult(tempSearchResult)
     }
-
 
     return (
         <>

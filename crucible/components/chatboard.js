@@ -19,7 +19,6 @@ const ChatBoard = (props) => {
         },
     };
 
-
     useEffect(() => {
         const intervalId = setInterval(() => {
             axios.get(url)
@@ -31,13 +30,10 @@ const ChatBoard = (props) => {
         return () => clearInterval(intervalId);
     }, [url]);
 
-
     useEffect(() => {
         const objDiv = document.getElementById('chatDiv');
         objDiv.scrollTop = objDiv.scrollHeight
     })
-
-
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -52,7 +48,6 @@ const ChatBoard = (props) => {
             .then((res) => console.log("sucess: post"))
             .catch((err) => console.log("error: post "))
     }
-
 
     const formatDate = (date) => {
         const MONTHS = {
