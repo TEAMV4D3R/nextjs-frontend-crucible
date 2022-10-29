@@ -9,7 +9,7 @@ import Image from "next/image"
 import 'react-modern-drawer/dist/index.css';
 
 export const Header = ({ user, logout }) => {
-    const logo = "/data/logo.png"
+    const logo = "/data/crucibleLogo.png"
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
@@ -20,7 +20,10 @@ export const Header = ({ user, logout }) => {
     return (
         <header data-testid="header-1" className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
             <div className="flex items-center content-center justify-center">
-                <Image src={logo} alt="logo" width={50} height={30} className="m-5" />
+                <div className="m-5">
+                    <Image src={logo} alt="logo" width={40} height={40} className="" />
+                </div>
+
                 <h2 className="my-auto text-2xl font-sans italic">CRUCIBLE</h2>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
