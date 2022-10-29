@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Image from "next/image"
 
 export const Header = ({ user, logout }) => {
+    const logo = "/data/logo.png"
 
     const [isOpen, setIsOpen] = useState(false)
     const toggleDrawer = () => {
@@ -17,8 +18,9 @@ export const Header = ({ user, logout }) => {
 
     return (
         <header data-testid="header-1" className='bg-color-shadow dark:bg-color-shadow-dark flex flex-row content-center justify-between'>
-            <div className="flex">
-                <h2 className="my-auto text-3xl m-10">CRUCIBLE</h2>
+            <div className="flex items-center content-center justify-center">
+                <Image src={logo} alt="logo" width={50} height={30} className="m-5" />
+                <h2 className="my-auto text-2xl">CRUCIBLE</h2>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link to="/"><AiFillHome className="text-3xl" /></Link>
