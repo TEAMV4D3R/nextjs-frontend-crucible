@@ -8,22 +8,19 @@ import MyJobs from '../components/myjobs'
 import AboutTheDevs from '../components/aboutthedevs';
 
 
-const CrucibleAdmin = ({ user, onLogin, tokens }) => {
+const CrucibleAdmin = ({ user }) => {
 
     const { resources, createResource, updateResource, deleteResource } = useResource();
 
-    const [userData, setUserData] = useState([]);
-
     return (
         <div data-testid="crucibleadmin-1">
-
-        <Routes>
-            <Route path='/' element={<MyJobs user={user} onLogin={onLogin} resources={resources} createResource={createResource} deleteResource={deleteResource} updateResource={updateResource} />}></Route>
-            <Route path='/dashboard' element={<DashBoard user={user?.id} userData={userData} resources={resources} onLogin={onLogin} />}></Route>
-            <Route path='/jobsearch' element={<JobSearch user={user} tokens={tokens} />}></Route>
-            <Route path='/chatboard' element={<ChatBoard user={user} />}></Route>
-            <Route path='/aboutthedevs' element={<AboutTheDevs user={user} onLogin={onLogin} />}></Route>
-        </Routes>
+            <Routes>
+                <Route path='/' element={<MyJobs user={user} resources={resources} createResource={createResource} deleteResource={deleteResource} updateResource={updateResource} />}></Route>
+                <Route path='/dashboard' element={<DashBoard user={user?.id} resources={resources} />}></Route>
+                <Route path='/jobsearch' element={<JobSearch user={user} />}></Route>
+                <Route path='/chatboard' element={<ChatBoard user={user} />}></Route>
+                <Route path='/aboutthedevs' element={<AboutTheDevs user={user} />}></Route>
+            </Routes>
         </div>
     )
 }

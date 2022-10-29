@@ -14,8 +14,6 @@ const App = ({ user, logout, onLogin, tokens }) => {
                 />
                 <CrucibleAdmin
                     user={user}
-                    onLogin={onLogin}
-                    tokens={tokens}
                 />
             </Router>
         </div>

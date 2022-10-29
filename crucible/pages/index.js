@@ -3,12 +3,19 @@ import App from "../components/app";
 import LoginForm from "../components/loginform";
 import Header from "../components/header";
 import { useAuth } from "../contexts/auth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Index = () => {
 
   const { user, login, tokens, logout } = useAuth();
-  const [userAuth, setUserAuth] = useState(user);
+
+  useEffect(() => {
+    const { token } = localStorage.getItem("token");
+
+    if (token) {
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    }
+  }, [])
 
   const loginHandler = (newUser) => {
     login(newUser?.username, newUser?.password)
@@ -17,13 +24,11 @@ export const Index = () => {
   // We need to add a function that sends new user information to the database
 
   return (
-    <>
-      <div data-testid="index-page-1">
-        {user ?
-          <App user={user} logout={logout} onLogin={loginHandler} tokens={tokens} /> :
-          <LoginForm onLogin={loginHandler} setUserAuth={setUserAuth} />}
-      </div>
-    </>
+    <div data-testid="index-page-1">
+      {user ?
+        <App user={user} logout={logout} /> :
+        <LoginForm onLogin={loginHandler} />}
+    </div>
   )
 }
 

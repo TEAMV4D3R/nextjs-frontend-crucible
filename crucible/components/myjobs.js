@@ -31,8 +31,7 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
                 </Head>
                 <main className="dark:bg-color-main-dark dark:text-color-bright-dark h-screen ">
                     <div className="flex flex-col items-center content-center w-full" >
-
-                        <button className="flex items-center content-center justify-center m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 py-5 w-4/5" onClick={() => {
+                        <button className="flex items-center content-center text-2xl justify-center m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 py-5 w-4/5" onClick={() => {
                             setIsModalOpen(true)
                         }}><MdOutlineAddCircle className="mx-3 text-2xl" />
                             <h2>Add New Job</h2></button>

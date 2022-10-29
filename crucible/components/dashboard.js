@@ -279,7 +279,7 @@ const UserHome = (props) => {
             <Head>
                 <title>Crucible Home</title>
             </Head>
-            <main className="flex flex-col bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
+            <main className="flex flex-col bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen ">
                 <div className="flex flex-row justify-between pt-10 w-4/5 mx-auto">
                     <div className="flex flex-col justify-between content-center bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Applied</h2>
