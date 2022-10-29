@@ -1,5 +1,5 @@
 
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
 import jwt from "jsonwebtoken";
 
@@ -22,6 +22,14 @@ export function AuthProvider(props) {
         login,
         logout,
     });
+
+    useEffect(() => {
+        const { token } = localStorage.getItem("token");
+
+        if (token) {
+            axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        }
+    }, [])
 
     async function login(username, password) {
 
