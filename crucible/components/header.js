@@ -24,7 +24,7 @@ export const Header = ({ user, logout }) => {
                     <Image src={logo} alt="logo" width={40} height={40} className="" />
                 </div>
 
-                <h2 className="my-auto text-2xl font-sans italic">CRUCIBLE</h2>
+                <h2 id="crucible-header" className="my-auto text-2xl font-sans italic">CRUCIBLE</h2>
             </div>
             <div className='flex justify-evenly w-1/6 items-center text-xl'>
                 <Link to="/"><AiFillHome className="text-4xl" /></Link>
@@ -33,8 +33,9 @@ export const Header = ({ user, logout }) => {
                 ) : (
                     <HiOutlineMoon className="text-4xl mx-2" onClick={() => setTheme("dark")} />
                 )}
-                <AiOutlineMenu onClick={toggleDrawer} className="text-4xl mx-2" />
+                <AiOutlineMenu id="drawer-icon" onClick={toggleDrawer} className="text-4xl mx-2" />
                 <ReactDrawer
+                    id="crucible-drawer"
                     isOpen={isOpen}
                     toggleDrawer={toggleDrawer}
                     user={user}
