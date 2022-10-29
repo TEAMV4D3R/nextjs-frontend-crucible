@@ -17,6 +17,7 @@ module.exports = {
         'color-shadow-dark': '#6E3667', //header/footer "Bright" Violet
         'color-contrast': '#5F0F4E', //Deep Purple
         'color-contrast-dark': '#535353', //Deep Grey
+        'color-darkgrey': 'rgb(64,64,64)'
 
       },
     },

@@ -132,7 +132,7 @@ const UserHome = (props) => {
                             contract++
                             break;
                     }
-                    switch (item.created.split("-")[1]) {
+                    switch (item.created.split("-")[2].slice(0, 2)) {
                         case "1":
                             one++;
                             break;
@@ -212,6 +212,7 @@ const UserHome = (props) => {
                             twentysix++;
                             break;
                         case "27":
+                            console.log("found")
                             twentyseven++;
                             break;
                         case "28":
@@ -284,36 +285,36 @@ const UserHome = (props) => {
             </Head>
             <main className="flex flex-col bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
                 <div className="flex flex-row justify-between pt-10 w-4/5 mx-auto">
-                    <div className="flex flex-col justify-between content-center bg-violet-200 p-5 w-1/6 rounded">
-                        <h2 className="text-center p-2 text-2xl  bg-color-shadow rounded">Applied</h2>
+                    <div className="flex flex-col justify-between content-center bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                        <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Applied</h2>
                         <div className="flex items-center content-center w-full justify-evenly m-5 container">
                             <AiFillCheckCircle className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userApplied}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 rounded">
-                        <h2 className="text-center p-2 text-2xl  bg-color-shadow rounded">Pending</h2>
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                        <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Pending</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <MdPendingActions className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userPending}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 rounded">
-                        <h2 className="text-center p-2 text-2xl  bg-color-shadow rounded">Interview</h2>
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                        <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Interview</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <AiFillClockCircle className="text-3xl" />
                             <h2 className="text-center  m-2 text-2xl">{userInterview}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 rounded">
-                        <h2 className="text-center p-2 text-2xl  bg-color-shadow rounded">Declined</h2>
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                        <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Declined</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <FaHandshakeAltSlash className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userDeclined}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 mx-4 p-5 w-1/6 rounded">
-                        <h2 className="text-center p-2 text-2xl  bg-color-shadow rounded">Accepted</h2>
+                    <div className="flex flex-col bg-violet-200 mx-4 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                        <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Accepted</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <FaHandshake className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userAccepted}</h2>
@@ -347,7 +348,8 @@ const UserHome = (props) => {
                         useTwentyThree={useTwentyFour}
                         useTwentyFive={useTwentyFive}
                         useTwentySix={useTwentySix}
-                        useTwentySeven={useTwentyEight}
+                        useTwentySeven={useTwentySeven}
+                        useTwentyEight={useTwentyEight}
                         useTwentyNine={useTwentyNine}
                         useTwentyThirty={useThirty}
                         useThirtyOne={useThirtyOne}
