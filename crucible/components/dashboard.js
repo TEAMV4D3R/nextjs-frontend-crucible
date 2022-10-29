@@ -355,7 +355,6 @@ const UserHome = (props) => {
                     <DoughnutChart useFullTime={useFullTime} usePartTime={usePartTime} useIntern={useIntern} useContract={useContract} />
                 </div>
             </main>
-            <Footer />
         </>
     )
 }

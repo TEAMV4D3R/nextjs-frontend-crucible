@@ -56,7 +56,7 @@ const JobSearch = () => {
                     </div>
                     <button className="m-10 rounded shadow-xl hy-20 bg-color-highlight dark:bg-color-highlight-dark dark:text-slate-900 w-full py-5">Search</button>
                 </form>
-                <div className="flex flex-col w-4/5 mx-auto">
+                <div className="flex flex-col w-4/5 mx-auto overflow-scroll">
                     {searchResult.map((el, idx) => {
                         return (
                             <div key={idx} className="flex items-center content-center mx-auto my-10 p-5 w-2/5 justify-between bg-violet-200 dark:bg-color-contrast-dark rounded shadow-2xl">

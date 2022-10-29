@@ -115,7 +115,6 @@ const ChatBoard = (props) => {
                     </form>
                 </div>
             </main>
-            <Footer />
         </>
     )
 }
