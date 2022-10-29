@@ -52,7 +52,7 @@ export const MyJobsTable = (props) => {
 
     return (
         <div className="flex justify-center w-screen" data-testid="myjobstable-1">
-            <table className='z-0 w-full w-4/5'>
+            <table className='z-0 shadow-xl w-4/5'>
                 <thead>
                     <tr>
                         {trackingjobs?.map((item, idx) => <th className={`${thStyles}`} key={idx}>{item}</th>)}

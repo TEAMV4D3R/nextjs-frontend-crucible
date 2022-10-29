@@ -281,35 +281,35 @@ const UserHome = (props) => {
             </Head>
             <main className="flex flex-col bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-screen ">
                 <div className="flex flex-row justify-between pt-10 w-4/5 mx-auto">
-                    <div className="flex flex-col justify-between content-center bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                    <div className="flex flex-col justify-between content-center bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 shadow-xl rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Applied</h2>
                         <div className="flex items-center content-center w-full justify-evenly m-5 container">
                             <AiFillCheckCircle className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userApplied}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 shadow-xl rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Pending</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <MdPendingActions className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userPending}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 shadow-xl rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Interview</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <AiFillClockCircle className="text-3xl" />
                             <h2 className="text-center  m-2 text-2xl">{userInterview}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                    <div className="flex flex-col bg-violet-200 p-5 w-1/6 dark:bg-neutral-600 shadow-xl rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Declined</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <FaHandshakeAltSlash className="text-3xl" />
                             <h2 className="text-center m-2 text-2xl">{userDeclined}</h2>
                         </div>
                     </div>
-                    <div className="flex flex-col bg-violet-200 mx-4 p-5 w-1/6 dark:bg-neutral-600 rounded">
+                    <div className="flex flex-col bg-violet-200 mx-4 p-5 w-1/6 dark:bg-neutral-600 shadow-xl rounded">
                         <h2 className="text-center p-2 text-2xl  bg-color-shadow dark:bg-neutral-800 rounded">Accepted</h2>
                         <div className="flex items-center content-center w-full justify-evenly  m-5 container">
                             <FaHandshake className="text-3xl" />

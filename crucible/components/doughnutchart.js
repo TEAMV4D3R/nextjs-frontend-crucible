@@ -47,7 +47,7 @@ const DoughnutChart = (props) => {
     };
     return (
         <div className='w-2/5 p-5' data-testid="doughnutchart-1">
-            <Doughnut data={data} options={options} />
+            <Doughnut data={data} options={options} className="rounded" />
         </div>
     )
 }
