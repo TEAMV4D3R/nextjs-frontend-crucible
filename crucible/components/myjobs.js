@@ -1,6 +1,7 @@
 import { MyJobsTable } from "../components/myjobstable";
 import { CreateJobModal } from "../components/createjobmodal"
 import { useState } from 'react';
+import { MdOutlineAddCircle } from "react-icons/md";
 import Head from "next/head";
 
 const MyJobs = ({ resources, createResource, updateResource, deleteResource, user }) => {
@@ -31,9 +32,10 @@ const MyJobs = ({ resources, createResource, updateResource, deleteResource, use
             <main className="bg-color-main dark:bg-color-main-dark dark:text-color-bright-dark h-[calc(100vh-10em)] ">
                 <div className="flex flex-col items-center content-center" >
 
-                    <button className="m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5 w-4/5" onClick={() => {
+                    <button className="flex items-center content-center justify-center m-5 rounded shadow-xl bg-color-highlight dark:bg-color-highlight-dark dark:text-neutral-900 px-8 py-5 w-4/5" onClick={() => {
                         setIsModalOpen(true)
-                    }}>Add New Job</button>
+                    }}><MdOutlineAddCircle className="mx-3 text-2xl" />
+                        <h2>Add New Job</h2></button>
 
                     <CreateJobModal modalIsOpen={modalIsOpen} setIsModalOpen={setIsModalOpen} handleSubmit={handleSubmit} input={resources} className="w-full z-40" />
 
