@@ -8,7 +8,7 @@ module.exports = {
     extend: {
       colors: {
         'color-main': 'rgb(248,250,252)', //light slate
-        'color-main-dark': '#1A0315', //Dark Plum
+        'color-main-dark': '#320F2B', //Dark Plum
         'color-highlight': '#BB3365', //Pink Highlight
         'color-highlight-dark': '#75A52D', //Electric Lime Highlight
         'color-bright': '#67AECA', //Bright Blue

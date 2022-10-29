@@ -89,7 +89,7 @@ const ChatBoard = (props) => {
                                             <div className="p-2 m-3 bg-violet-200 dark:bg-neutral-800 rounded-full">
                                                 <h2 className="rounded-full text-xl">{el.name[0].toUpperCase()}</h2>
                                             </div> :
-                                            <div className="p-2 m-3 bg-blue-200 dark:bg-neutral-800 rounded-full">
+                                            <div className="p-2 m-3 bg-blue-200 dark:bg-color-main-dark rounded-full">
                                                 <h2 className="rounded-full text-xl">{el.name[0].toUpperCase()}</h2>
                                             </div>
                                         }
