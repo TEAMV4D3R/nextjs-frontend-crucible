@@ -48,8 +48,8 @@ const ChatBoard = (props) => {
         e.target.message.value = ""
         const data = `${url}${message}`
         await axios.post(url, message)
-            .then((res) => console.log("sucess: ", res.data))
-            .catch((err) => console.log("error: ", err))
+            .then((res) => console.log("sucess: post"))
+            .catch((err) => console.log("error: post "))
     }
 
 
@@ -73,7 +73,6 @@ const ChatBoard = (props) => {
         const day = tempDate[2].slice(0, 2)
         const hour = tempDate[2].slice(3, 8)
         return `${month} ${day}, ${tempDate[0]} ${hour}`
-
     }
 
     return (
